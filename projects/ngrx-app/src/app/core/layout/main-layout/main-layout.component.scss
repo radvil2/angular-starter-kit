@@ -1,0 +1,72 @@
+@import '../../../../styles/variables';
+
+mat-toolbar {
+  height: 50px;
+  // background-color: #4b314f !important;
+}
+
+.spacer {
+  flex: 1 0 auto;
+}
+
+a.nav-link {
+  margin: 0 5px;
+  // color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+
+  &.active {
+    background-color: #0c0c0c36;
+    // color: #cccccc;
+  }
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 290px;
+  // background-color: #fbfbfb;
+}
+
+.side-toolbar {
+  height: 48px;
+  // background-color: #000;
+  font-size: 14px;
+
+  .big-title {
+    // color: #fbfbfb;
+    font-weight: 600;
+    font-family: 'Ubuntu';
+    font-size: 27px;
+  }
+
+  .mat-icon-button {
+    // color: #fbfbfb;
+  }
+}
+
+mat-nav-list {
+  padding: 0px;
+
+  .mat-list-item {
+    font-size: 14px;
+    // color: #181818;
+    height: 46px;
+
+    &.active {
+      // color: #00b2e9;
+      // background-color: #dddddd;
+
+      mat-icon {
+        // color: #00b2e9;
+      }
+    }
+  }
+
+}

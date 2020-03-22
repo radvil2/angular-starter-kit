@@ -1,0 +1,58 @@
+* {
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+code {
+  white-space: nowrap;
+  border-radius: 10px;
+  padding: 0 8px 1px 8px;
+}
+
+.mat-menu-content {
+  fa-icon {
+    position: relative;
+    top: 2px;
+    left: 4px;
+  }
+}
+
+p {
+  a {
+    border-bottom: 3px solid;
+  }
+}
+
+// 3rd party styles reset
+.badge.title {
+  border-radius: 0px !important;
+  font-size: inherit !important;
+  line-height: normal !important;
+}
+
+.mat-drawer-container {
+  position: unset !important;
+}
+
+.mat-menu-content {
+  padding: 0px !important;
+}
+
+.mat-menu-item .mat-icon {
+  margin-right: 5px !important;
+}
+
+.mat-menu-panel {
+  min-height: 0px !important;
+  border-radius: 0px !important;
+}
+
+.mat-dialog-container {
+  border-radius: 0px !important;
+}
+
+.mat-button.nav-link {
+  border-radius: 0px !important;
+}
