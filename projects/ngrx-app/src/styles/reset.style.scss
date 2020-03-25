@@ -36,6 +36,10 @@ p {
   position: unset !important;
 }
 
+.mat-drawer-inner-container {
+  overflow-x: hidden !important;
+}
+
 .mat-menu-content {
   padding: 0px !important;
 }
