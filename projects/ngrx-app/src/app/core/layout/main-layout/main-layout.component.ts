@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 import { Store, select } from '@ngrx/store';
-import { selectEffectiveTheme } from '../../settings/settings.selectors';
+import { selectEffectiveTheme, selectIsStickyHeader } from '../../index';
 import { environment as env } from '../../../../environments/environment';
 
 @Component({
@@ -18,6 +18,7 @@ export class MainLayoutComponent implements OnInit {
   // version = env.versions.app;
   year = new Date().getFullYear();
   theme$: Observable<string>;
+  isStickyHeader$: Observable<boolean>;
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -41,5 +42,6 @@ export class MainLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
+    this.isStickyHeader$ = this.store.pipe(select(selectIsStickyHeader));
   }
 }

@@ -7,6 +7,7 @@ export interface SettingsState {
   autoNightMode: boolean;
   nightTheme: string;
   hour: number;
+  stickyHeader: boolean;
 }
 
 export interface State extends AppState {

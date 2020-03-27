@@ -47,7 +47,7 @@ export class SettingsEffects {
   persistSettings = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(fromActions.changeAutoNightMode, fromActions.changeTheme),
+        ofType(fromActions.changeAutoNightMode, fromActions.changeTheme, fromActions.changeStickyHeader),
         withLatestFrom(this.store.pipe(select(selectSettingsState))),
         tap(([action, settings]) =>
           this.localStorageSrv.setItem(SETTINGS_KEY, settings)

@@ -4,6 +4,7 @@
 @include mat-core();
 
 @import '../themes/default.theme';
+@import '../themes/black.theme';
 
 @import '../themes/reset.theme.scss';
 @import '../app/core/layout/main-layout/main-layout.theme';
@@ -16,4 +17,9 @@
 .default-theme {
   @include angular-material-theme($rad-default-theme);
   @include custom-components-theme($rad-default-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($rad-black-theme);
+  @include custom-components-theme($rad-black-theme);
 }

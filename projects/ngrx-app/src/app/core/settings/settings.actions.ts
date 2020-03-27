@@ -14,3 +14,8 @@ export const changeHour = createAction(
   '[Settings] Change Hour',
   props<{ hour: number }>()
 );
+
+export const changeStickyHeader = createAction(
+  '[Settings] Change Sticky Header',
+  props<{ stickyHeader: boolean }>()
+)

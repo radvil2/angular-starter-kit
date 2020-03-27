@@ -6,7 +6,8 @@ export const initialState: SettingsState = {
   theme: 'DEFAULT-THEME',
   autoNightMode: false,
   nightTheme: NIGHT_MODE_THEME,
-  hour: 0
+  hour: 0,
+  stickyHeader: false
 };
 
 const reducer = createReducer(
@@ -15,6 +16,7 @@ const reducer = createReducer(
     fromActions.changeTheme,
     fromActions.changeAutoNightMode,
     fromActions.changeHour,
+    fromActions.changeStickyHeader,
     (state, action) => ({ ...state, ...action })
   )
 );

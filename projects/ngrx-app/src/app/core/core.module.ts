@@ -13,7 +13,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // app states
 /** TODO: Integrate sticky header setting
- ** TODO: Create Dark theme
  ** TODO: Create settings.component container
  ** TODO: Integrate page and element animations
  ** TODO: Set app progress bar
