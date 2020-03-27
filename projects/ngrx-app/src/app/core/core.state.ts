@@ -6,7 +6,7 @@ import {
 
 import { initStateFromLocalStorage } from './utils/initial-state.reducer';
 import { settingsReducer } from './settings/settings.reducer';
-import { SettingsState} from './settings/settings.model';
+import { SettingsState } from './settings/settings.model';
 
 export const reducers: ActionReducerMap<AppState> = {
   settings: settingsReducer

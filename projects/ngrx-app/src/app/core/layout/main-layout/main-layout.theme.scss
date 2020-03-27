@@ -29,6 +29,12 @@
             background-color: mat-color($accent, darker) !important;
           }
         }
+        &.active, &:hover {
+          border-right-color: mat-color($primary, darker) !important;
+          mat-icon {
+            font-size: 200% !important;
+          }
+        }
       }
     }
 

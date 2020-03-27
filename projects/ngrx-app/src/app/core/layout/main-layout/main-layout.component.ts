@@ -13,7 +13,6 @@ import { environment as env } from '../../../../environments/environment';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-
   // isProd = env.production;
   // envName = env.envName;
   // version = env.versions.app;
@@ -26,7 +25,7 @@ export class MainLayoutComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
-  
+
   navMenu = [
     { link: '/home', label: 'Home', icon: 'home' },
     { link: '/admin', label: 'Admin', icon: 'supervisor_account' },

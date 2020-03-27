@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { TitleService } from './core/';
 
 @Component({
   selector: 'rad-root',
@@ -6,6 +9,12 @@ import { Component } from '@angular/core';
     <rad-main-layout></rad-main-layout>
   `
 })
-export class AppComponent {
-  title = 'ngrx-app';
+export class AppComponent implements OnInit {
+  isLoading: Observable<boolean>;
+
+  constructor(private titleSrv: TitleService) {}
+
+  ngOnInit() {
+    this.titleSrv.setAppTitle();
+  }
 }

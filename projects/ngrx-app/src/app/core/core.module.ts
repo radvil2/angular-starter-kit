@@ -13,8 +13,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // app states
 /** TODO: Integrate sticky header setting
+ ** TODO: Create Dark theme
  ** TODO: Create settings.component container
- ** TODO: Integrate animation
+ ** TODO: Integrate page and element animations
+ ** TODO: Set app progress bar
  */
 import { AppState, reducers } from './core.state';
 import { SettingsEffects } from './settings/settings.effects';
@@ -36,12 +38,14 @@ import { NotificationService } from './utils/notification.service';
 // components
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
+const PROVIDERS = [
+  { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+  { provide: ErrorHandler, useClass: AppErrorHandler }
+];
+
 @NgModule({
   declarations: [MainLayoutComponent],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    { provide: ErrorHandler, useClass: AppErrorHandler }
-  ],
+  providers: [...PROVIDERS],
   imports: [
     // vendor
     BrowserModule,

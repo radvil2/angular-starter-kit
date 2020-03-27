@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 
     // material
     MatCardModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   exports: [
     // vendor
@@ -23,7 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 
     // material
     MatCardModule,
-    MatButtonModule,
+    MatButtonModule
   ]
 })
 export class SharedModule {}

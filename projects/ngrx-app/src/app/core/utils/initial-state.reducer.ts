@@ -12,7 +12,7 @@ export function initStateFromLocalStorage(
     if ([INIT.toString(), UPDATE.toString()].includes(action.type)) {
       return { ...newState, ...LocalStorageService.loadInitialState() };
     }
-    
+
     return newState;
   };
 }

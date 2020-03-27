@@ -7,6 +7,7 @@
 
 mat-toolbar {
   height: 50px;
+
   &.sticky {
     position: sticky;
   }
@@ -22,9 +23,9 @@ a.nav-link {
   font-size: 16px;
   font-weight: 400;
 
-  &.active {
-    background-color: #0c0c0c36;
-  }
+  // &.active {
+  //   background-color: #0c0c0c36;
+  // }
 }
 .spacer {
   flex: 1 1 auto;
@@ -54,6 +55,10 @@ mat-nav-list {
   .mat-list-item {
     font-size: 14px;
     height: 46px;
-  }
 
+    &.active,
+    &:hover {
+      border-right: solid 5px;
+    }
+  }
 }
