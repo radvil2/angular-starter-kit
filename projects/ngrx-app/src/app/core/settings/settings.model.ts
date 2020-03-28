@@ -8,6 +8,9 @@ export interface SettingsState {
   nightTheme: string;
   hour: number;
   stickyHeader: boolean;
+  pageAnimations: boolean;
+  pageAnimationsDisabled: boolean;
+  elementsAnimations: boolean;
 }
 
 export interface State extends AppState {

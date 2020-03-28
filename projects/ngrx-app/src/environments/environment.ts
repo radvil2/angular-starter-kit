@@ -5,7 +5,8 @@
 export const environment = {
   appName: 'Ngrx App',
   envName: 'DEV',
-  production: false
+  production: false,
+  version: '1.8.2'
 };
 
 /*

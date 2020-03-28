@@ -1,0 +1,10 @@
+.admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // place-items: center;
+
+  mat-card {
+    width: 50%;
+  }
+}

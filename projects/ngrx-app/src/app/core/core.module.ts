@@ -12,8 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // app states
-/** TODO: Integrate sticky header setting
- ** TODO: Create settings.component container
+/** TODO: Create settings.component container
  ** TODO: Integrate page and element animations
  ** TODO: Set app progress bar
  */
@@ -35,66 +34,108 @@ import { HttpErrorInterceptor } from './utils/http-error.interceptor';
 import { AppErrorHandler } from './utils/app-error-handler.service';
 import { NotificationService } from './utils/notification.service';
 
+// Fontawesome icons
+import {
+	FaIconLibrary,
+	FontAwesomeModule
+} from '@fortawesome/angular-fontawesome';
+import {
+	faCog,
+	faBars,
+	faRocket,
+	faPowerOff,
+	faUserCircle
+} from '@fortawesome/free-solid-svg-icons';
+import {
+	faGithub,
+	faFacebook,
+	faTwitter,
+	faInstagram,
+	faYoutube
+} from '@fortawesome/free-brands-svg-icons';
+
 // components
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
+const LAYOUT_COMPONENTS = [MainLayoutComponent, FooterComponent];
 
 const PROVIDERS = [
-  { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-  { provide: ErrorHandler, useClass: AppErrorHandler }
+	{ provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+	{ provide: ErrorHandler, useClass: AppErrorHandler }
 ];
 
 @NgModule({
-  declarations: [MainLayoutComponent],
-  providers: [...PROVIDERS],
-  imports: [
-    // vendor
-    BrowserModule,
-    BrowserAnimationsModule,
-    CommonModule,
-    RouterModule,
+	declarations: [...LAYOUT_COMPONENTS],
+	providers: [...PROVIDERS],
+	imports: [
+		// vendor
+		BrowserModule,
+		BrowserAnimationsModule,
+		CommonModule,
+		RouterModule,
 
-    // materials
-    MatToolbarModule,
-    MatButtonModule,
-    MatSnackBarModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatProgressBarModule,
-    MatSidenavModule,
-    MatToolbarModule,
+		// materials
+		MatToolbarModule,
+		MatButtonModule,
+		MatSnackBarModule,
+		MatIconModule,
+		MatListModule,
+		MatMenuModule,
+		MatProgressBarModule,
+		MatSidenavModule,
+		MatToolbarModule,
 
-    // ngrx
-    StoreModule.forRoot(reducers, {}),
-    EffectsModule.forRoot([SettingsEffects]),
-    StoreDevtoolsModule.instrument({
-      name: 'Angular Workspace Radvil',
-      logOnly: environment.production
-    })
-  ],
-  exports: [
-    // materials
-    MatButtonModule,
-    MatSnackBarModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatSidenavModule,
-    MatToolbarModule,
+		// 3rd party
+		FontAwesomeModule,
 
-    // components
-    MainLayoutComponent
-  ]
+		// ngrx
+		StoreModule.forRoot(reducers, {}),
+		EffectsModule.forRoot([SettingsEffects]),
+		StoreDevtoolsModule.instrument({
+			name: 'Angular Workspace Radvil',
+			logOnly: environment.production
+		})
+	],
+	exports: [
+		// materials
+		MatButtonModule,
+		MatSnackBarModule,
+		MatToolbarModule,
+		MatIconModule,
+		MatListModule,
+		MatProgressBarModule,
+		MatSidenavModule,
+		MatToolbarModule,
+
+		// 3rd party
+		FontAwesomeModule,
+
+		// components
+		MainLayoutComponent
+	]
 })
 export class CoreModule {
-  constructor(
-    @Optional()
-    @SkipSelf()
-    parentModule: CoreModule
-  ) {
-    if (parentModule) {
-      throw new Error('CoreModule is already loaded. Import only in AppModule');
-    }
-  }
+	constructor(
+		@Optional()
+		@SkipSelf()
+		parentModule: CoreModule,
+		faIconLibrary: FaIconLibrary
+	) {
+		if (parentModule) {
+			throw new Error('CoreModule is already loaded. Import only in AppModule');
+		}
+		faIconLibrary.addIcons(
+			faCog,
+			faBars,
+			faRocket,
+			faPowerOff,
+			faUserCircle,
+			faGithub,
+			faFacebook,
+			faTwitter,
+			faInstagram,
+			faYoutube
+		);
+	}
 }

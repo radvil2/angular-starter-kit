@@ -5,7 +5,6 @@ import { map, shareReplay } from 'rxjs/operators';
 
 import { Store, select } from '@ngrx/store';
 import { selectEffectiveTheme, selectIsStickyHeader } from '../../index';
-import { environment as env } from '../../../../environments/environment';
 
 @Component({
   selector: 'rad-main-layout',
@@ -13,10 +12,6 @@ import { environment as env } from '../../../../environments/environment';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-  // isProd = env.production;
-  // envName = env.envName;
-  // version = env.versions.app;
-  year = new Date().getFullYear();
   theme$: Observable<string>;
   isStickyHeader$: Observable<boolean>;
 

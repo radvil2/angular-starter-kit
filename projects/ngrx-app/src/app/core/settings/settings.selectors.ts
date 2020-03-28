@@ -46,3 +46,13 @@ export const selectIsStickyHeader = createSelector(
   selectSettings,
   (state: SettingsState) => state.stickyHeader
 )
+
+export const selectPageAnimations = createSelector(
+  selectSettings,
+  settings => settings.pageAnimations
+)
+
+export const selectElementsAnimations = createSelector(
+  selectSettings,
+  settings => settings.elementsAnimations
+)

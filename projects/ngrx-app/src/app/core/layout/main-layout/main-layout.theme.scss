@@ -1,76 +1,62 @@
 @import '~@angular/material/theming';
 
 @mixin rad-main-layout-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$warn: map-get($theme, warn);
 
-  mat-sidenav-container {
-    mat-toolbar {
-      button {
-        &.active {
-          color: mat-color($accent, default-contrast);
-          background-color: mat-color($accent);
-        }
-      }
+	mat-sidenav-container {
+		mat-toolbar {
+			button {
+				&.active {
+					color: mat-color($accent, default-contrast);
+					background-color: mat-color($accent);
+				}
+			}
 
-      .link {
-        color: mat-color($primary, default-contrast);
-      }
-    }
+			.link {
+				color: mat-color($primary, default-contrast);
+			}
+		}
 
-    mat-sidenav {
-      .mat-list-item {
-        &.active {
-          color: mat-color($accent, default-contrast);
-          background-color: mat-color($accent) !important;
+		mat-sidenav {
+			.mat-list-item {
+				&.active {
+					color: mat-color($accent, default-contrast);
+					background-color: mat-color($accent) !important;
 
-          &:hover {
-            background-color: mat-color($accent, darker) !important;
-          }
-        }
-        &.active, &:hover {
-          border-right-color: mat-color($primary, darker) !important;
-          mat-icon {
-            font-size: 200% !important;
-          }
-        }
-      }
-    }
+					&:hover {
+						background-color: mat-color($accent, darker) !important;
+					}
+				}
+				&.active,
+				&:hover {
+					border-right-color: mat-color($primary, darker) !important;
+					mat-icon {
+						font-size: 200% !important;
+					}
+				}
+			}
+		}
+	}
 
-    .footer {
-      color: mat-color($primary, lighter);
-      background-color: mat-color($primary, darker);
+	.error-notification-overlay {
+		color: mat-color($warn, default-contrast);
+		background-color: mat-color($warn);
+	}
 
-      .links,
-      .signature {
-        a {
-          color: mat-color($primary, lighter);
-          &:hover {
-            color: mat-color($accent);
-          }
-        }
-      }
-    }
-  }
+	.info-notification-overlay {
+		color: mat-color($accent, default-contrast);
+		background-color: mat-color($accent);
+	}
 
-  .error-notification-overlay {
-    color: mat-color($warn, default-contrast);
-    background-color: mat-color($warn);
-  }
+	.success-notification-overlay {
+		color: mat-color($success-color, default-contrast);
+		background-color: mat-color($success-color);
+	}
 
-  .info-notification-overlay {
-    color: mat-color($accent, default-contrast);
-    background-color: mat-color($accent);
-  }
-
-  .success-notification-overlay {
-    color: mat-color($success-color, default-contrast);
-    background-color: mat-color($success-color);
-  }
-
-  .warning-notification-overlay {
-    color: mat-color($warning-color, default-contrast);
-    background-color: mat-color($warning-color);
-  }
+	.warning-notification-overlay {
+		color: mat-color($warning-color, default-contrast);
+		background-color: mat-color($warning-color);
+	}
 }

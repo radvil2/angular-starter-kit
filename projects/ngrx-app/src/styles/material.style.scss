@@ -8,10 +8,12 @@
 
 @import '../themes/reset.theme.scss';
 @import '../app/core/layout/main-layout/main-layout.theme';
+@import '../app/core/layout/footer/footer.theme.scss';
 
 @mixin custom-components-theme($theme) {
   @include rad-reset-theme($theme);
   @include rad-main-layout-theme($theme);
+  @include rad-footer-theme($theme);
 }
 
 .default-theme {

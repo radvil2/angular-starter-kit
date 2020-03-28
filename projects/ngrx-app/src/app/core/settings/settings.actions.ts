@@ -19,3 +19,18 @@ export const changeStickyHeader = createAction(
   '[Settings] Change Sticky Header',
   props<{ stickyHeader: boolean }>()
 )
+
+export const changePageAnimations = createAction(
+  '[Settings] Change Page Animations',
+  props<{ pageAnimations: boolean }>()
+)
+
+export const changePageAnimationsDisabled = createAction(
+  '[Settings] Change Page Animations Disabled',
+  props<{ pageAnimationsDisabled: boolean }>()
+)
+
+export const changeElementsAnimations = createAction(
+  '[Settings] Change Elements Animations',
+  props<{ elementsAnimations: boolean }>()
+)
