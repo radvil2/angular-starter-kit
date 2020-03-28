@@ -7,7 +7,7 @@ export const initialState: SettingsState = {
   autoNightMode: false,
   nightTheme: NIGHT_MODE_THEME,
   hour: 0,
-  stickyHeader: false
+  stickyHeader: true
 };
 
 const reducer = createReducer(

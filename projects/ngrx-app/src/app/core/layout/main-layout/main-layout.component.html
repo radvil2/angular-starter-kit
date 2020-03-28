@@ -1,95 +1,131 @@
 <div [class]="'theme-wrapper ' + (theme$ | async)">
-	<div
-		class="nav-toolbar"
-		[style.position]="(isStickyHeader$ | async) ? 'fixed' : 'inherit'"
-		[class.mat-elevation-z5]="isStickyHeader$ | async"
-	>
-		<mat-toolbar color="primary">
-			<!-- Menu toggler -->
-			<button
-				mat-icon-button
-				(click)="drawer.toggle()"
-				*ngIf="isHandset$ | async"
-			>
-				<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-			</button>
-
-			<!-- Toolbar logo -->
-			<a routerLink="/" class="nav-link">
-				<img
-					src="assets/icons/badge.svg"
-					title="Home"
-					alt="Home"
-					width="33"
-					height="36"
-					class="topbar-logo"
-				/>
-			</a>
-
-			<!-- Separator -->
-			<span class="spacer"></span>
-
-			<div class="navigation">
-				<a
-					mat-button
-					class="nav-link"
-					title="Home"
-					routerLink="home"
-					routerLinkActive="active"
-					>Home</a
-				>
-
-				<a
-					mat-button
-					class="nav-link"
-					title="Admin"
-					routerLink="admin"
-					routerLinkActive="active"
-					>Admin</a
-				>
-			</div>
-		</mat-toolbar>
-	</div>
-
 	<mat-sidenav-container>
-		<!-- SIDE NAVIGATION (MOBILE) -->
-		<mat-sidenav
-			#drawer
-			fixedInViewport
-			[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-			[mode]="(isHandset$ | async) ? 'over' : 'side'"
-		>
-			<!-- Side Toolbar -->
+		<!-- Sidenav -->
+		<mat-sidenav #sidenav mode="over">
+			<!-- sidenav toolbar -->
 			<mat-toolbar color="primary">
-				<button mat-icon-button (click)="drawer.toggle()">
+				<!-- sidenav button drawer -->
+				<button mat-icon-button class="d-md-none" (click)="sidenav.toggle()">
 					<mat-icon>menu</mat-icon>
 				</button>
 
-				<div class="big-title">
-					<img
-						src="assets/icons/badge.svg"
-						title="Home"
-						alt="Home"
-						width="37"
-						height="40"
-						class="topbar-logo"
-					/>
-					JOKERING
+				<!-- sidenav branding -->
+				<div class="branding">
+					<img src="assets/icons/badge.svg" alt="branding" />
+					<span>Injoker</span>
 				</div>
 			</mat-toolbar>
 
-			<mat-nav-list (click)="drawer.toggle()" *ngFor="let item of navMenu">
-				<a mat-list-item [routerLink]="[item.link]" routerLinkActive="active">
-					<span class="menu-list">{{ item.label | uppercase }}</span>
+			<!-- sidenav item list -->
+			<mat-nav-list>
+				<a
+					mat-list-item
+					(click)="sidenav.close()"
+					*ngFor="let item of sideNavigations"
+					[routerLink]="item.link"
+					routerLinkActive="active"
+				>
+					<span>{{ item.label | uppercase }}</span>
+
 					<span class="spacer"></span>
+
 					<mat-icon>{{ item.icon }}</mat-icon>
 				</a>
 			</mat-nav-list>
 		</mat-sidenav>
 
-		<!-- ROUTER OUTLET (PAGE CONTAINER) -->
-		<main class="content">
-			<router-outlet></router-outlet>
-		</main>
+		<!-- wrapper -->
+		<div class="wrapper">
+			<!-- topnav toolbar -->
+			<div
+				class="toolbar"
+				[style.position]="(isStickyHeader$ | async) ? 'fixed' : 'inherit'"
+				[class.mat-elevation-z5]="isStickyHeader$ | async"
+			>
+				<mat-toolbar color="primary">
+					<!-- topnav button drawer -->
+					<button mat-icon-button class="d-md-none" (click)="sidenav.toggle()">
+						<mat-icon>menu</mat-icon>
+					</button>
+
+					<!-- topnav branding sm -->
+					<span routerLink="" class="branding spacer d-inline d-sm-none">
+						<img src="assets/icons/badge.svg" />
+					</span>
+
+					<!-- topnav branding md -->
+					<span
+						routerLink=""
+						class="branding spacer d-none d-sm-inline d-md-none"
+					>
+						<img src="assets/icons/badge.svg" />
+						<span>Injoker</span>
+					</span>
+
+					<!-- topnav branding md ? -->
+					<span routerLink="" class="branding spacer d-none d-md-inline">
+						<img src="assets/icons/badge.svg" />
+						<span>Injoker</span>
+					</span>
+
+					<!-- topnav spacer -->
+					<span class="spacer"></span>
+
+					<!-- topnav item list -->
+					<span class="d-none d-md-inline">
+						<a
+							mat-button
+							class="nav-link"
+							*ngFor="let item of navigations"
+							[routerLink]="item.link"
+							routerLinkActive="active"
+						>
+							{{ item.label }}
+						</a>
+					</span>
+
+					<!-- login button -->
+					<button mat-stroked-button color="accent">
+						Login
+					</button>
+
+					<!-- menu toolbar button -->
+					<button mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
+						<mat-icon>code</mat-icon>
+					</button>
+
+					<!-- menu toolbar container -->
+					<mat-menu #toolbarUserMenu="matMenu">
+						<!-- menu settings -->
+						<button mat-menu-item routerLink="settings">
+							<mat-icon>settings</mat-icon>
+							<span>Settings</span>
+						</button>
+
+						<!-- menu logout -->
+						<button mat-menu-item>
+							<mat-icon>fingerprint</mat-icon>
+							<span>Logout</span>
+						</button>
+					</mat-menu>
+				</mat-toolbar>
+			</div>
+
+			<!-- content -->
+			<main class="content">
+				<router-outlet></router-outlet>
+			</main>
+
+			<!-- footer -->
+			<!-- <div class="footer">
+				<div class="row">
+
+				</div>
+
+				<div class="row">
+
+				</div>
+			</div> -->
+		</div>
 	</mat-sidenav-container>
 </div>

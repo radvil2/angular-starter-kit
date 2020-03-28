@@ -5,55 +5,43 @@
 	width: 100%;
 }
 
-.nav-toolbar {
-	position: fixed;
-	display: flex;
-	width: 100%;
-	z-index: 10;
+mat-toolbar,
+.toolbar > mat-toolbar {
+	height: 50px;
+}
 
-	mat-toolbar {
-		height: 50px;
+.branding {
+	cursor: pointer;
+	overflow: hidden;
+
+	span {
+		font-weight: 600;
+		font-family: 'Ubuntu';
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-left: 5px;
 	}
 
-	.spacer {
-		flex: 1 1 auto;
-	}
-
-	a.nav-link {
-		margin: 0 5px;
-		cursor: pointer;
-		font-size: 16px;
-		font-weight: 400;
+	img {
+		position: relative;
+		width: 33px;
+		height: 36px;
 	}
 }
 
-mat-sidenav-container {
-	height: 100%;
-
-	mat-sidenav {
-		width: 265px;
-		z-index: 11;
-
-		mat-toolbar {
-			height: 50px;
-			font-size: 14px;
-
-			.big-title {
-				font-weight: 600;
-				font-family: 'Ubuntu';
-				font-size: 25px;
-			}
-		}
-	}
-
-	main.page-content {
-		flex: 1 0 auto;
-		padding: 0px 20px;
-		// margin-top: 64px;
-	}
+// top nav link
+.nav-link {
+	margin: 0 10px 0 0;
+	border-radius: 0px;
 }
 
-mat-nav-list {
+// sidenav
+mat-sidenav {
+  width: 256px;
+}
+
+// sidenav list items
+.mat-nav-list {
 	padding: 0px;
 
 	a.mat-list-item {
@@ -61,12 +49,137 @@ mat-nav-list {
 		height: 46px;
 
 		.spacer {
-			flex: 1 0 auto;
+      flex: 1 0 auto;
 		}
 
 		&.active,
 		&:hover {
-			border-right: solid 5px;
+      border-right: solid 5px;
+		}
+	}
+}
+
+mat-sidenav-container {
+	height: 100%;
+	width: 100%;
+
+	.toolbar {
+		position: fixed;
+		width: 100%;
+		display: flex;
+		z-index: 10;
+
+		mat-icon {
+			font-size: 24px;
+		}
+
+		.mat-stroked-button {
+			margin-right: 10px;
+		}
+
+		.spacer {
+			flex: 1 1 auto;
+		}
+
+		@media (max-width: map-get($grid-breakpoints, lg)) {
+			.nav-link {
+				min-width: 0;
+				padding: 0 10px;
+			}
+		}
+	}
+
+	.wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+
+		.content {
+			flex: 1 0 auto;
+			margin-top: 64px;
+			overflow: hidden;
+			padding: 0px 20px;
+		}
+
+		.footer {
+			flex: 0 0 auto;
+			padding: 0 15px;
+			text-align: center;
+
+			.row {
+				padding: 10px 0;
+
+				.links {
+					a {
+						transition: padding 0.5s;
+						display: inline-block;
+						padding: 20px 5px;
+
+						&:hover {
+							text-decoration: none;
+						}
+
+						mat-icon {
+							font-size: 30px;
+							width: 35px;
+						}
+
+						span {
+							display: inline-block;
+							width: 75px;
+							padding: 0 0 0 3px;
+							overflow: hidden;
+							text-align: left;
+							white-space: nowrap;
+							transition: width 0.5s;
+						}
+					}
+
+					@media (min-width: map-get($grid-breakpoints, lg)) {
+						a {
+							padding: 20px 10px;
+						}
+					}
+
+					@media (max-width: map-get($grid-breakpoints, md)) {
+						a {
+							padding: 20px;
+
+							span {
+								width: 0;
+								padding: 0;
+							}
+						}
+					}
+
+					@media (max-width: map-get($grid-breakpoints, sm)) {
+						a {
+							padding: 20px 5px;
+						}
+					}
+				}
+
+				@media (min-width: map-get($grid-breakpoints, sm)) {
+					.signature {
+						position: relative;
+
+						a {
+							position: absolute;
+							right: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: $toolbar-breakpoint) {
+		.content {
+			margin-top: 56px !important;
 		}
 	}
 }

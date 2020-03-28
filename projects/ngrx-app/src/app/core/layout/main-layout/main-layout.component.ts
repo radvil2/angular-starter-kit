@@ -20,18 +20,15 @@ export class MainLayoutComponent implements OnInit {
   theme$: Observable<string>;
   isStickyHeader$: Observable<boolean>;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
-
-  navMenu = [
+  navigations = [
     { link: '/home', label: 'Home', icon: 'home' },
+    { link: '/about', label: 'About', icon: 'info' },
+  ];
+
+  sideNavigations = [
+    ...this.navigations,
     { link: '/admin', label: 'Admin', icon: 'supervisor_account' },
     { link: '/settings', label: 'Settings', icon: 'settings' },
-    { link: '/about', label: 'About', icon: 'info' },
     { link: '/login', label: 'Login', icon: 'fingerprint' }
   ];
 
