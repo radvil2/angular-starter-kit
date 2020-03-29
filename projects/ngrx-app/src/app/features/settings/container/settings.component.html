@@ -1,1 +1,100 @@
-<p class="lead">Settings component works !</p>
+<div class="container-fluid">
+	<div class="header">
+		<h2>General Settings</h2>
+	</div>
+
+	<ng-container *ngIf="settings$ | async as settings">
+		<div class="row" [ngClass]="routeAnimationsElements">
+			<div class="col-md-8">
+				<mat-icon color="accent">
+					<fa-icon icon="paint-brush"></fa-icon>
+				</mat-icon>
+				&nbsp;&nbsp;&nbsp;
+
+				<mat-form-field style="width: 80%;">
+					<mat-select
+						placeholder="Select Theme"
+						[ngModel]="settings.theme"
+						(selectionChange)="onThemeSelect($event)"
+						name="themes"
+					>
+						<mat-option *ngFor="let theme of themes" [value]="theme.value">
+							{{ theme.label }}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+
+			<div class="col-md-4">
+				<mat-icon color="accent">
+					<fa-icon icon="lightbulb" color="accent"></fa-icon>
+				</mat-icon>
+				&nbsp;&nbsp;&nbsp;
+
+				<mat-placeholder>Auto Night Mode</mat-placeholder>
+				<mat-slide-toggle
+					style="float: right;"
+					[checked]="settings.autoNightMode"
+					(change)="onAutoNightModeToggle($event)"
+				>
+				</mat-slide-toggle>
+			</div>
+		</div>
+
+		<div class="row" [ngClass]="routeAnimationsElements">
+			<div class="col-md-4">
+				<mat-icon color="accent">
+					<fa-icon icon="bars"></fa-icon>
+				</mat-icon>
+				&nbsp;&nbsp;&nbsp;
+
+				<mat-placeholder>Sticky Header</mat-placeholder>
+				<mat-slide-toggle
+					style="float: right;"
+					[checked]="settings.stickyHeader"
+					(change)="onStickyHeaderToggle($event)"
+				>
+				</mat-slide-toggle>
+			</div>
+
+			<div class="col-md-4">
+				<mat-icon color="accent">
+					<fa-icon icon="window-maximize"></fa-icon>
+				</mat-icon>
+				&nbsp;&nbsp;&nbsp;
+
+				<mat-placeholder>Animate Page Transition</mat-placeholder>
+				<mat-slide-toggle
+					style="float: right;"
+					matTooltip="Sorry, this feature is disabled in IE, EDGE and Safari"
+					matTooltipPosition="before"
+					*ngIf="settings.pageAnimationsDisabled"
+					disabled
+				></mat-slide-toggle>
+
+				<mat-slide-toggle
+					style="float: right;"
+					*ngIf="!settings.pageAnimationsDisabled"
+					[checked]="settings.pageAnimations"
+					(change)="onPageAnimationsToggle($event)"
+				>
+				</mat-slide-toggle>
+			</div>
+
+			<div class="col-md-4">
+				<mat-icon color="accent">
+					<fa-icon icon="stream" color="accent"></fa-icon>
+				</mat-icon>
+				&nbsp;&nbsp;&nbsp;
+
+				<mat-placeholder>Animate Elements</mat-placeholder>
+				<mat-slide-toggle
+					style="float: right;"
+					[checked]="settings.elementsAnimations"
+					(change)="onElementsAnimationsToggle($event)"
+				>
+				</mat-slide-toggle>
+			</div>
+		</div>
+	</ng-container>
+</div>

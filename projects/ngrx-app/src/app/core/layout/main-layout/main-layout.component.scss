@@ -99,7 +99,7 @@ mat-sidenav-container {
 		display: flex;
 		flex-direction: column;
 
-		.content {
+		.page-container {
 			flex: 1 0 auto;
 			margin-top: 64px;
 			overflow: hidden;
@@ -108,7 +108,7 @@ mat-sidenav-container {
 	}
 
 	@media (max-width: $toolbar-breakpoint) {
-		.content {
+		.page-container {
 			margin-top: 56px !important;
 		}
 	}

@@ -112,8 +112,15 @@
 			</div>
 
 			<!-- content -->
-			<main class="content">
-				<router-outlet></router-outlet>
+			<main
+				class="page-container"
+				[@routeAnimations]="
+					o.isActivated &&
+					o.activatedRoute.routeConfig.data &&
+					o.activatedRoute.routeConfig.data.title
+				"
+			>
+				<router-outlet #o="outlet"></router-outlet>
 			</main>
 
 			<!-- footer -->
