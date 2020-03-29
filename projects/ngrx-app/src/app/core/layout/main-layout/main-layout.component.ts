@@ -6,7 +6,6 @@ import { map, shareReplay } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import { selectEffectiveTheme, selectIsStickyHeader } from '../../index';
 import { routeAnimations } from '../../utils/animations';
-import { changePageAnimationsDisabled } from '../../settings/settings.actions';
 
 @Component({
 	selector: 'rad-main-layout',

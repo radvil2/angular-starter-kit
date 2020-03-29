@@ -10,9 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // app states
-/** TODO: Create settings.component container
- ** TODO: Integrate page and element animations
- ** TODO: Set app progress bar
+/** TODO: Set app progress bar
  */
 import { AppState, reducers } from './core.state';
 import { SettingsEffects } from './settings/settings.effects';
