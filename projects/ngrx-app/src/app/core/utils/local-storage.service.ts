@@ -52,7 +52,7 @@ export class LocalStorageService {
     localStorage.removeItem(`${APP_PREFIX}${key}`);
   }
 
-  /** Tests if localStorage exists */
+   /** Tests that localStorage exists, can be written to, and read from. */
   testLocalStorage() {
     const testValue = 'testValue';
     const testKey = 'testKey';

@@ -75,12 +75,18 @@ mat-sidenav-container {
 
 		mat-icon {
 			font-size: 24px;
+			display: flex;
+			margin: auto;
 		}
 
 		.mat-stroked-button {
 			margin-right: 5px;
 			border-radius: 0px;
 		}
+
+		// .mat-icon-button.user {
+		// 	border: solid 2px #0097a7;
+		// }
 
 		.spacer {
 			flex: 1 1 auto;

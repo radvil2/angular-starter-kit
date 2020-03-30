@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { IsLoadingService } from '@service-work/is-loading';
-import { TitleService } from './core/';
+import { TitleService, LocalStorageService } from './core/';
 import { Store } from '@ngrx/store';
 import { changePageAnimationsDisabled } from './core/settings/settings.actions';
 
@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
 		private router: Router,
 		private loadingSrv: IsLoadingService,
 		private titleSrv: TitleService,
+		private lsSrv: LocalStorageService,
 		private store: Store
 	) {}
 
@@ -44,6 +45,8 @@ export class AppComponent implements OnInit {
   }
 
 	ngOnInit(): void {
+		this.lsSrv.testLocalStorage();
+		
     if (AppComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
         changePageAnimationsDisabled({

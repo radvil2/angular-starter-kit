@@ -10,17 +10,24 @@ const routes: Routes = [
 	{
 		path: 'about',
 		loadChildren: () =>
-			import('./features/about/about.module').then(m => m.AboutModule)
+			import('./features/about/about.module').then((m) => m.AboutModule)
 	},
 	{
 		path: 'admin',
 		loadChildren: () =>
-			import('./features/admin/admin.module').then(m => m.AdminModule)
+			import('./features/admin/admin.module').then((m) => m.AdminModule)
+	},
+	{
+		path: 'auth',
+		loadChildren: () =>
+			import('./features/auth/auth.module').then((m) => m.AuthModule)
 	},
 	{
 		path: 'settings',
 		loadChildren: () =>
-			import('./features/settings/settings.module').then(m => m.SettingsModule)
+			import('./features/settings/settings.module').then(
+				(m) => m.SettingsModule
+			)
 	},
 	{
 		path: '**',

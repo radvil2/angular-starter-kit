@@ -71,21 +71,21 @@
 					</button>
 
 					<!-- topnav branding sm -->
-					<span routerLink="" class="branding spacer d-inline d-sm-none">
+					<span routerLink="" class="branding d-inline d-sm-none">
 						<img src="assets/icons/badge.svg" />
 					</span>
 
 					<!-- topnav branding md -->
 					<span
 						routerLink=""
-						class="branding spacer d-none d-sm-inline d-md-none"
+						class="branding d-none d-sm-inline d-md-none"
 					>
 						<img src="assets/icons/badge.svg" />
 						<span>Injoker</span>
 					</span>
 
 					<!-- topnav branding md ? -->
-					<span routerLink="" class="branding spacer d-none d-md-inline">
+					<span routerLink="" class="branding d-none d-md-inline">
 						<img src="assets/icons/badge.svg" />
 						<span>Injoker</span>
 					</span>
@@ -107,17 +107,38 @@
 					</span>
 
 					<!-- login button -->
-					<button mat-stroked-button color="accent">
+					<button
+						mat-stroked-button
+						color="accent"
+						routerLink='auth/login'
+						routerLinkActive='active'
+					>
 						Login
 					</button>
 
+					<!-- register button -->
+					<button
+						mat-stroked-button
+						color="accent"
+						routerLink='auth/register'
+						routerLinkActive='active'
+					>
+						Register
+					</button>
+
 					<!-- menu toolbar button -->
-					<button mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
+					<button mat-icon-button class="user" [matMenuTriggerFor]="toolbarUserMenu">
 						<mat-icon>account_circle</mat-icon>
 					</button>
 
 					<!-- menu toolbar container -->
 					<mat-menu #toolbarUserMenu="matMenu">
+						<!-- menu settings -->
+						<button mat-menu-item routerLink="profile">
+							<mat-icon>account_circle</mat-icon>
+							<span>User Profile</span>
+						</button>
+
 						<!-- menu settings -->
 						<button mat-menu-item routerLink="settings">
 							<mat-icon>settings</mat-icon>

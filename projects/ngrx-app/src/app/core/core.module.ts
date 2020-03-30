@@ -12,7 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 // app states
 /** TODO: Set app progress bar
  */
-import { AppState, reducers } from './core.state';
+import { AppState, reducers, metaReducers } from './core.state';
 import { SettingsEffects } from './settings/settings.effects';
 
 // materials
@@ -84,7 +84,7 @@ const PROVIDERS = [
 		FontAwesomeModule,
 
 		// ngrx
-		StoreModule.forRoot(reducers, {}),
+		StoreModule.forRoot(reducers, { metaReducers }),
 		EffectsModule.forRoot([SettingsEffects]),
 		StoreDevtoolsModule.instrument({
 			name: 'Angular Workspace Radvil',

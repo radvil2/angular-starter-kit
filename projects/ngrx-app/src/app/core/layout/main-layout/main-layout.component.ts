@@ -30,7 +30,6 @@ export class MainLayoutComponent implements OnInit {
 	sideNavMenuTwo = [
 		{ link: '/about', label: 'About', icon: 'info' },
 		{ link: '/settings', label: 'Settings', icon: 'settings' },
-		{ link: '/logout', label: 'Login', icon: 'fingerprint' }
 	];
 
 	constructor(
