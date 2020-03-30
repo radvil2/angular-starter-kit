@@ -17,15 +17,20 @@ export class MainLayoutComponent implements OnInit {
 	theme$: Observable<string>;
 	isStickyHeader$: Observable<boolean>;
 
-	navigations = [
-		{ link: '/about', label: 'About', icon: 'info' },
+	topNavMenu = [
 		{ link: '/admin', label: 'Admin', icon: 'supervisor_account' }
 	];
 
-	sideNavigations = [
-		...this.navigations,
+	sideNavMenuOne = [
+		{ link: '/home', label: 'Home', icon: 'home'},
+		{ link: '/trendings', label: 'Trending', icon: 'code'},
+		{ link: '/subscriptions', label: 'Subscriptions', icon: 'palette'},
+	];
+
+	sideNavMenuTwo = [
+		{ link: '/about', label: 'About', icon: 'info' },
 		{ link: '/settings', label: 'Settings', icon: 'settings' },
-		{ link: '/login', label: 'Login', icon: 'fingerprint' }
+		{ link: '/logout', label: 'Login', icon: 'fingerprint' }
 	];
 
 	constructor(

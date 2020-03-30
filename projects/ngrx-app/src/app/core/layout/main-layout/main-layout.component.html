@@ -17,21 +17,43 @@
 			</mat-toolbar>
 
 			<!-- sidenav item list -->
-			<mat-nav-list>
-				<a
-					mat-list-item
-					(click)="sidenav.close()"
-					*ngFor="let item of sideNavigations"
-					[routerLink]="item.link"
-					routerLinkActive="active"
-				>
-					<span>{{ item.label | uppercase }}</span>
+			<div class="side-menu-group">
+				<!-- menu group one -->
+				<mat-nav-list>
+					<a
+						mat-list-item
+						(click)="sidenav.close()"
+						*ngFor="let menuItemOne of sideNavMenuOne"
+						[routerLink]="menuItemOne.link"
+						routerLinkActive="active"
+					>
+						<span>{{ menuItemOne.label | uppercase }}</span>
 
-					<span class="spacer"></span>
+						<span class="spacer"></span>
 
-					<mat-icon>{{ item.icon }}</mat-icon>
-				</a>
-			</mat-nav-list>
+						<mat-icon>{{ menuItemOne.icon }}</mat-icon>
+					</a>
+				</mat-nav-list>
+
+				<mat-divider></mat-divider>
+
+				<!-- menu group two -->
+				<mat-nav-list>
+					<a
+						mat-list-item
+						(click)="sidenav.close()"
+						*ngFor="let menuItemTwo of sideNavMenuTwo"
+						[routerLink]="menuItemTwo.link"
+						routerLinkActive="active"
+					>
+						<span>{{ menuItemTwo.label | uppercase }}</span>
+
+						<span class="spacer"></span>
+
+						<mat-icon>{{ menuItemTwo.icon }}</mat-icon>
+					</a>
+				</mat-nav-list>
+			</div>
 		</mat-sidenav>
 
 		<!-- wrapper -->
@@ -76,11 +98,11 @@
 						<a
 							mat-button
 							class="nav-link"
-							*ngFor="let item of navigations"
-							[routerLink]="item.link"
+							*ngFor="let topNav of topNavMenu"
+							[routerLink]="topNav.link"
 							routerLinkActive="active"
 						>
-							{{ item.label }}
+							{{ topNav.label }}
 						</a>
 					</span>
 

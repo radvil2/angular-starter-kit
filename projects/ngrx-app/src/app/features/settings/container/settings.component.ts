@@ -10,7 +10,7 @@ import { selectSettings } from '../../../core/settings/settings.selectors';
 @Component({
 	selector: 'rad-settings',
 	templateUrl: './settings.component.html',
-	styles: ['./settings.component.scss'],
+	styleUrls: ['./settings.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsComponent implements OnInit {

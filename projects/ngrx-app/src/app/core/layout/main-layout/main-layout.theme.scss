@@ -32,9 +32,10 @@
 				&.active,
 				&:hover {
 					border-right-color: mat-color($primary, darker) !important;
-					mat-icon {
-						font-size: 200% !important;
-					}
+
+					// mat-icon {
+					// 	color: mat-color($primary, darker) !important;
+					// }
 				}
 			}
 		}

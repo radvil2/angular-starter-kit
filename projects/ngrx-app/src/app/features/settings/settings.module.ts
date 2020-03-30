@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { SettingsRouting, routedComponents } from './settings.routing';
+import { SettingsRouting } from './settings.routing';
+import { SettingsComponent } from './container/settings.component';
 
 @NgModule({
-  declarations: [...routedComponents],
+  declarations: [SettingsComponent],
   imports: [SharedModule, SettingsRouting]
 })
 export class SettingsModule {}

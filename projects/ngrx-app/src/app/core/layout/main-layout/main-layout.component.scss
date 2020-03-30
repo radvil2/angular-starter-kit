@@ -37,7 +37,7 @@ mat-toolbar,
 
 // sidenav
 mat-sidenav {
-  width: 256px;
+	width: 256px;
 }
 
 // sidenav list items
@@ -49,12 +49,16 @@ mat-sidenav {
 		height: 46px;
 
 		.spacer {
-      flex: 1 0 auto;
+			flex: 1 0 auto;
 		}
 
 		&.active,
 		&:hover {
-      border-right: solid 5px;
+			border-right: solid 5px;
+
+			mat-icon {
+				margin-right: -5px;
+			}
 		}
 	}
 }

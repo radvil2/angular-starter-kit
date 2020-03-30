@@ -7,7 +7,9 @@
 		<div class="row" [ngClass]="routeAnimationsElements">
 			<div class="col-md-8">
 				<mat-icon color="accent">
-					<fa-icon icon="paint-brush"></fa-icon>
+					<!-- <fa-icon icon="paint-brush"></fa-icon> -->
+					<!-- colorize | format_paint -->
+					format_color_fill
 				</mat-icon>
 				&nbsp;&nbsp;&nbsp;
 
@@ -27,13 +29,15 @@
 
 			<div class="col-md-4">
 				<mat-icon color="accent">
-					<fa-icon icon="lightbulb" color="accent"></fa-icon>
+					<!-- <fa-icon icon="lightbulb" color="accent"></fa-icon> -->
+					wb_sunny
 				</mat-icon>
 				&nbsp;&nbsp;&nbsp;
 
 				<mat-placeholder>Auto Night Mode</mat-placeholder>
+				&nbsp;&nbsp;&nbsp;
+
 				<mat-slide-toggle
-					style="float: right;"
 					[checked]="settings.autoNightMode"
 					(change)="onAutoNightModeToggle($event)"
 				>
@@ -44,13 +48,15 @@
 		<div class="row" [ngClass]="routeAnimationsElements">
 			<div class="col-md-4">
 				<mat-icon color="accent">
-					<fa-icon icon="bars"></fa-icon>
+					<!-- <fa-icon icon="bars"></fa-icon> -->
+					view_stream
 				</mat-icon>
 				&nbsp;&nbsp;&nbsp;
 
 				<mat-placeholder>Sticky Header</mat-placeholder>
+				&nbsp;&nbsp;&nbsp;
+
 				<mat-slide-toggle
-					style="float: right;"
 					[checked]="settings.stickyHeader"
 					(change)="onStickyHeaderToggle($event)"
 				>
@@ -59,13 +65,15 @@
 
 			<div class="col-md-4">
 				<mat-icon color="accent">
-					<fa-icon icon="window-maximize"></fa-icon>
+					<!-- <fa-icon icon="window-maximize"></fa-icon> -->
+					web
 				</mat-icon>
 				&nbsp;&nbsp;&nbsp;
 
 				<mat-placeholder>Animate Page Transition</mat-placeholder>
+				&nbsp;&nbsp;&nbsp;
+
 				<mat-slide-toggle
-					style="float: right;"
 					matTooltip="Sorry, this feature is disabled in IE, EDGE and Safari"
 					matTooltipPosition="before"
 					*ngIf="settings.pageAnimationsDisabled"
@@ -73,7 +81,6 @@
 				></mat-slide-toggle>
 
 				<mat-slide-toggle
-					style="float: right;"
 					*ngIf="!settings.pageAnimationsDisabled"
 					[checked]="settings.pageAnimations"
 					(change)="onPageAnimationsToggle($event)"
@@ -83,13 +90,15 @@
 
 			<div class="col-md-4">
 				<mat-icon color="accent">
-					<fa-icon icon="stream" color="accent"></fa-icon>
+					<!-- <fa-icon icon="stream" color="accent"></fa-icon> -->
+					line_weight
 				</mat-icon>
 				&nbsp;&nbsp;&nbsp;
 
 				<mat-placeholder>Animate Elements</mat-placeholder>
+				&nbsp;&nbsp;&nbsp;
+
 				<mat-slide-toggle
-					style="float: right;"
 					[checked]="settings.elementsAnimations"
 					(change)="onElementsAnimationsToggle($event)"
 				>
