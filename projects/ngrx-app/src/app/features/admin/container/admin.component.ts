@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../core/utils/animations';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
 
 @Component({
   selector: 'rad-admin',

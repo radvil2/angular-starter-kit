@@ -5,6 +5,11 @@
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
 
+  // side menu drawer backdrop
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0, 0, 0, 0.81);
+  }
+
   a {
     color: mat-color($foreground, text);
 

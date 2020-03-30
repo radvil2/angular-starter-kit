@@ -5,12 +5,6 @@
 	$accent: map-get($theme, accent);
 	$warn: map-get($theme, warn);
 
-	// topbar
-	// toolbar>mat-stroked-button.active {
-	// 	color: mat-color($accent, default-contrast) !important;
-	// 	background-color: mat-color($primary) !important;
-	// }
-
 	mat-sidenav-container {
 		mat-toolbar {
 			button {
@@ -40,10 +34,6 @@
 				&.active,
 				&:hover {
 					border-right-color: mat-color($primary, darker) !important;
-
-					// mat-icon {
-					// 	color: mat-color($primary, darker) !important;
-					// }
 				}
 			}
 		}

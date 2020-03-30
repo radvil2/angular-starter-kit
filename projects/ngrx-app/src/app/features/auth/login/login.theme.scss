@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+
+@mixin rad-feature-login-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$warn: map-get($theme, warn);
+
+	.card {
+		padding: 10px 20px;
+		border: mat-color($primary, lighter);
+	}
+
+	.badge {
+    background-color: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+	}
+}
