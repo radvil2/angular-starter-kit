@@ -10,7 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // app states
-/** TODO: Set app progress bar
+/** TODO: Set app loading on init
  */
 import { AppState, reducers, metaReducers } from './core.state';
 import { SettingsEffects } from './settings/settings.effects';

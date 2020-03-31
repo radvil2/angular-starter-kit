@@ -19,6 +19,7 @@ export class SettingsComponent implements OnInit {
 
 	themes = [
 		{ value: 'DEFAULT-THEME', label: 'Default Theme' },
+		{ value: 'WHITE-THEME', label: 'White Theme' },
 		{ value: 'BLACK-THEME', label: 'Black Theme' }
 	];
 

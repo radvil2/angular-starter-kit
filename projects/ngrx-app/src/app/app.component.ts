@@ -20,10 +20,11 @@ import { changePageAnimationsDisabled } from './core/settings/settings.actions';
 	selector: 'rad-root',
 	template: `
 		<mat-progress-bar
+			class="default-theme"
 			*ngIf="isLoading$ | async"
 			mode="indeterminate"
-			color="primary"
-			style="position: absolute; top: 0; z-index: 999; height: 3px;"
+			color="accent"
+			[style]="progressBarStyle"
 		></mat-progress-bar>
 
 		<rad-main-layout></rad-main-layout>
@@ -40,22 +41,28 @@ export class AppComponent implements OnInit {
 		private store: Store
 	) {}
 
-  private static isIEorEdgeOrSafari() {
-    return ['ie', 'edge', 'safari'].includes(browser().name);
-  }
+	public progressBarStyle = {
+		position: 'absolute',
+		height: '3px',
+		'z-index': '6',
+		top: '0'
+	};
+
+	private static isIEorEdgeOrSafari() {
+		return ['ie', 'edge', 'safari'].includes(browser().name);
+	}
 
 	ngOnInit(): void {
-		this.lsSrv.testLocalStorage();
-		
-    if (AppComponent.isIEorEdgeOrSafari()) {
-      this.store.dispatch(
-        changePageAnimationsDisabled({
-          pageAnimationsDisabled: true
-        })
-      );
-    }
-		
 		this.titleSrv.setAppTitle();
+		this.lsSrv.testLocalStorage();
+		this.setAppProgressBar();
+
+		if (AppComponent.isIEorEdgeOrSafari())
+			this.store.dispatch(
+				changePageAnimationsDisabled({
+					pageAnimationsDisabled: true
+				})
+			);
 	}
 
 	// set app progress bar
@@ -64,14 +71,14 @@ export class AppComponent implements OnInit {
 		this.router.events
 			.pipe(
 				filter(
-					event =>
+					(event) =>
 						event instanceof NavigationStart ||
 						event instanceof NavigationEnd ||
 						event instanceof NavigationCancel ||
 						event instanceof NavigationError
 				)
 			)
-			.subscribe(event => {
+			.subscribe((event) => {
 				if (event instanceof NavigationStart) {
 					this.loadingSrv.add();
 					return;

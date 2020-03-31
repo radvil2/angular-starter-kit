@@ -50,9 +50,7 @@
               "projects/ngrx-app/src/assets"
             ],
             "styles": [
-              "projects/ngrx-app/src/styles/styles.scss",
-              "projects/ngrx-app/src/styles/material.style.scss",
-              "projects/ngrx-app/src/styles/app.style.scss"
+              "projects/ngrx-app/src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -116,9 +114,7 @@
               "projects/ngrx-app/src/assets"
             ],
             "styles": [
-              "projects/ngrx-app/src/styles/styles.scss",
-              "projects/ngrx-app/src/styles/material.style.scss",
-              "projects/ngrx-app/src/styles/app.style.scss"
+              "projects/ngrx-app/src/styles/styles.scss"
             ],
             "scripts": []
           }

@@ -5,7 +5,7 @@ import { AboutRouting } from './about.routing';
 import { AboutComponent } from './container/about.component';
 
 @NgModule({
-  declarations: [AboutComponent],
-  imports: [SharedModule, AboutRouting]
+	declarations: [AboutComponent],
+	imports: [SharedModule, AboutRouting]
 })
 export class AboutModule {}

@@ -5,13 +5,13 @@
 	$accent: map-get($theme, accent);
 	$warn: map-get($theme, warn);
 
-	.card {
-		padding: 10px 20px;
-		border: mat-color($primary, lighter);
-	}
+	// .card {
+	// 	border: mat-color($primary, lighter);
+	// 	background-color: mat-color($primary, default-contrast);
+	// }
 
-	.badge {
-    background-color: mat-color($primary);
-    color: mat-color($primary, default-contrast);
+	.badge.title {
+		background-color: mat-color($primary);
+		color: mat-color($primary, default-contrast);
 	}
 }

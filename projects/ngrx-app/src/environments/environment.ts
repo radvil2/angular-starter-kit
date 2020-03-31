@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  appName: 'Ngrx App',
-  envName: 'DEV',
-  production: false,
-  version: '1.8.2'
+	appName: 'Ngrx App',
+	envName: 'DEV',
+	production: false,
+	version: '1.8.2'
 };
 
 /*

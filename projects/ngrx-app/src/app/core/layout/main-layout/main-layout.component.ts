@@ -17,19 +17,17 @@ export class MainLayoutComponent implements OnInit {
 	theme$: Observable<string>;
 	isStickyHeader$: Observable<boolean>;
 
-	topNavMenu = [
-		{ link: '/admin', label: 'Admin', icon: 'supervisor_account' }
-	];
+	topNavMenu = [{ link: '/admin', label: 'Admin', icon: 'supervisor_account' }];
 
 	sideNavMenuOne = [
-		{ link: '/home', label: 'Home', icon: 'home'},
-		{ link: '/trendings', label: 'Trending', icon: 'code'},
-		{ link: '/subscriptions', label: 'Subscriptions', icon: 'palette'},
+		{ link: '/home', label: 'Home', icon: 'home' },
+		{ link: '/trendings', label: 'Trending', icon: 'code' },
+		{ link: '/subscriptions', label: 'Subscriptions', icon: 'palette' }
 	];
 
 	sideNavMenuTwo = [
 		{ link: '/about', label: 'About', icon: 'info' },
-		{ link: '/settings', label: 'Settings', icon: 'settings' },
+		{ link: '/settings', label: 'Settings', icon: 'settings' }
 	];
 
 	constructor(

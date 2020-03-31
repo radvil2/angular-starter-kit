@@ -4,7 +4,7 @@ import { SettingsRouting } from './settings.routing';
 import { SettingsComponent } from './container/settings.component';
 
 @NgModule({
-  declarations: [SettingsComponent],
-  imports: [SharedModule, SettingsRouting]
+	declarations: [SettingsComponent],
+	imports: [SharedModule, SettingsRouting]
 })
 export class SettingsModule {}

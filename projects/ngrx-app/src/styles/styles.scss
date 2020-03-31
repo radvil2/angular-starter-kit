@@ -1,5 +1,7 @@
 @import './_variables';
-@import './reset.style.scss';
+@import './_reset.style';
+@import './_app.style';
+@import './_material.style';
 
 // 3rd party
 @import '~bootstrap/scss/bootstrap-reboot';

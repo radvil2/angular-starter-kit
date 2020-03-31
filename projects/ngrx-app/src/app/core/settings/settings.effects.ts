@@ -53,9 +53,9 @@ export class SettingsEffects {
 					fromActions.changeAutoNightMode,
 					fromActions.changeTheme,
 					fromActions.changeStickyHeader,
-          fromActions.changePageAnimations,
-          fromActions.changePageAnimationsDisabled,
-          fromActions.changeElementsAnimations
+					fromActions.changePageAnimations,
+					fromActions.changePageAnimationsDisabled,
+					fromActions.changeElementsAnimations
 				),
 				withLatestFrom(this.store.pipe(select(selectSettingsState))),
 				tap(([action, settings]) =>
@@ -86,24 +86,30 @@ export class SettingsEffects {
 		{ dispatch: false }
 	);
 
-  updateRouteAnimationType = createEffect(
-    () =>
-      merge(INIT, this.actions$.pipe(
-        ofType(
-          fromActions.changeElementsAnimations,
-          fromActions.changePageAnimations
-        )
-      )).pipe(
-        withLatestFrom(
-          combineLatest([
-            this.store.pipe(select(fromSelectors.selectPageAnimations)),
-            this.store.pipe(select(fromSelectors.selectElementsAnimations))
-          ])
-        ),
-        tap(([action, [pageAnimations, elementsAnimations]]) => this.animationsSrv.updateRouteAnimationType(
-          pageAnimations,
-          elementsAnimations
-        ))
-      ), { dispatch: false }
-  );
+	updateRouteAnimationType = createEffect(
+		() =>
+			merge(
+				INIT,
+				this.actions$.pipe(
+					ofType(
+						fromActions.changeElementsAnimations,
+						fromActions.changePageAnimations
+					)
+				)
+			).pipe(
+				withLatestFrom(
+					combineLatest([
+						this.store.pipe(select(fromSelectors.selectPageAnimations)),
+						this.store.pipe(select(fromSelectors.selectElementsAnimations))
+					])
+				),
+				tap(([action, [pageAnimations, elementsAnimations]]) =>
+					this.animationsSrv.updateRouteAnimationType(
+						pageAnimations,
+						elementsAnimations
+					)
+				)
+			),
+		{ dispatch: false }
+	);
 }

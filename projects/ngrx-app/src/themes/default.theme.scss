@@ -3,7 +3,7 @@ $rad-default-accent: mat-palette($mat-light-blue);
 $rad-default-warn: mat-palette($mat-pink, 600);
 
 $rad-default-theme: mat-light-theme(
-  $rad-default-primary,
-  $rad-default-accent,
-  $rad-default-warn
+	$rad-default-primary,
+	$rad-default-accent,
+	$rad-default-warn
 );

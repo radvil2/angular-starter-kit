@@ -1,5 +1,5 @@
 export const environment = {
-  appName: 'Ngrx App',
-  envName: 'PROD',
-  production: true
+	appName: 'Ngrx App',
+	envName: 'PROD',
+	production: true
 };
