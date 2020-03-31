@@ -1,15 +1,14 @@
 #auth-register {
 	padding: 20px 0px;
-}
-
-.content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
 
+.content {
 	&.card {
-		width: auto;
+		width: 77%;
     height: auto;
     padding: 20px 40px;
 	}

@@ -1,19 +1,22 @@
 <div id="auth-register">
 	<div class="content card">
-		<div class="header">
-			<h2 class="badge inline title">USER REGISTRATION</h2>
+		<div [ngClass]="'header ' + routerElementsAnimations">
+			<div class="badge inline title">
+				<mat-icon>account_circle</mat-icon>
+				USER REGISTRATION
+			</div>
 		</div>
 
 		<div class="container">
 			<form>
-				<div class="row">
+				<div [ngClass]="'row ' + routerElementsAnimations">
 					<mat-form-field class="col-md-12">
 						<mat-label>Full Name</mat-label>
 						<input matInput type="text" placeholder="Enter your name" />
 					</mat-form-field>
 				</div>
 
-				<div class="row">
+				<div [ngClass]="'row ' + routerElementsAnimations">
 					<mat-form-field class="col-md-6">
 						<mat-label>Username</mat-label>
 						<input matInput type="text" placeholder="Enter your username" />
@@ -21,11 +24,15 @@
 
 					<mat-form-field class="col-md-6">
 						<mat-label>Email</mat-label>
-						<input matInput type="text" placeholder="Enter your email address" />
+						<input
+							matInput
+							type="text"
+							placeholder="Enter your email address"
+						/>
 					</mat-form-field>
 				</div>
 
-				<div class="row">
+				<div [ngClass]="'row ' + routerElementsAnimations">
 					<mat-form-field class="col-md-6">
 						<mat-label>Password</mat-label>
 						<input matInput type="password" placeholder="Type your password" />
@@ -33,19 +40,23 @@
 
 					<mat-form-field class="col-md-6">
 						<mat-label>Confirm password</mat-label>
-						<input matInput type="password" placeholder="Retype your password" />
+						<input
+							matInput
+							type="password"
+							placeholder="Retype your password"
+						/>
 					</mat-form-field>
-        </div>
-        
-        <div class="row btn-submit">
-          <div class="col-md-3 col-sm-6">
-            <button mat-flat-button>Register</button>
-          </div>
+				</div>
 
-          <div class="col-md-3 col-sm-6">
-            <button mat-stroked-button color="warn">Cancel</button>
-          </div>
-        </div>
+				<div [ngClass]="'row btn-submit ' + routerElementsAnimations">
+					<div class="col-md-3 col-sm-6">
+						<button mat-flat-button>Register</button>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<button mat-stroked-button color="warn">Cancel</button>
+					</div>
+				</div>
 			</form>
 		</div>
 		<!-- end of content -->
