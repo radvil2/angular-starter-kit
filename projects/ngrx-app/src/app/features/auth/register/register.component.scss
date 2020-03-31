@@ -1,3 +1,5 @@
+@import '../../../../styles/variables';
+
 #auth-register {
 	padding: 20px 0px;
 	display: flex;
@@ -9,7 +11,28 @@
 .content {
 	&.card {
 		width: 77%;
-    height: auto;
-    padding: 20px 40px;
+		height: auto;
+		padding: 20px 40px;
+	}
+}
+
+@media (max-width: map-get($grid-breakpoints, md)) {
+	.title {
+		margin: auto !important;
+	}
+}
+
+@media (max-width: map-get($grid-breakpoints, sm)) {
+	.card {
+		padding: 10px 20px !important;
+		width: 100% !important;
+	}
+
+	.title {
+		font-size: 1.3rem !important;
+	}
+
+	mat-form-field {
+		font-size: 16px !important;
 	}
 }

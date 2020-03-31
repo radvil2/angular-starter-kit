@@ -3,7 +3,6 @@ html,
 body {
 	height: 100%;
 	margin: 0;
-	font-family: Ubuntu, Roboto;
 }
 
 .theme-wrapper {
@@ -15,9 +14,9 @@ body {
 	font-weight: 500;
 }
 
-.content > .lead {
+.page-container {
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 1rem;
 }
 
 .justify {
@@ -90,7 +89,7 @@ body {
 		place-items: center;
 		padding: 0px 20px;
 		margin-bottom: 20px;
-		font-size: 25px;
+		font-size: 1.3rem;
 		font-weight: 300;
 		border-radius: 20px !important;
 		border: 1px solid #959595;

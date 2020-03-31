@@ -1,21 +1,24 @@
-<div class="container-fluid">
-	<div [ngClass]="'header ' + routeElementsAnimations">
-		<h2>About Page Works...</h2>
+<div id="auth-login">
+	<div class="header">
+		<h2 class="badge lvl title">
+			<mat-icon>info</mat-icon>
+			About
+		</h2>
 	</div>
 
-	<main [ngClass]="routeElementsAnimations">
-		<mat-card>
-			<mat-card-header>Card Header</mat-card-header>
-			<mat-card-subtitle>I am tired dealing with UI frontend</mat-card-subtitle>
+	<div class="content card">
+		<p class="lead justify">
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
+			consectetur excepturi quisquam? Aliquid suscipit temporibus vitae?
+			Veritatis quisquam rerum aliquam sequi, ad iusto et debitis fugiat ullam
+			accusantium praesentium. Inventore?
+		</p>
 
-			<mat-card-content>
-				<p class="lead">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur ut
-					voluptas corrupti quibusdam reiciendis quasi placeat iure, neque
-					officia, laudantium sequi ullam architecto dolorem accusantium quas
-					iusto sit mollitia! Iure!
-				</p>
-			</mat-card-content>
-		</mat-card>
-	</main>
+		<span class="badge info">TODO LIST</span>
+		<ul class="lead">
+			<li>Manage state for the router</li>
+			<li>Make UI for login, ignore topbar just yet</li>
+			<li>Login custom component theme. DONT FORGET</li>
+		</ul>
+	</div>
 </div>

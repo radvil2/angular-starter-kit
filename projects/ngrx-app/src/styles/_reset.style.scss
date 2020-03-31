@@ -1,4 +1,6 @@
 * {
+	font-family: Ubuntu, Roboto;
+
 	&:active,
 	:focus {
 		outline: none !important;
@@ -22,6 +24,11 @@ ul {
 }
 
 // 3rd party styles reset
+mat-form-field {
+	font-weight: 300 !important;
+	font-size: 1rem !important;
+}
+
 .mat-drawer-container {
 	position: unset !important;
 }
@@ -33,10 +40,6 @@ ul {
 .mat-menu-content {
 	padding: 0px !important;
 }
-
-// .mat-menu-item .mat-icon {
-//   margin-right: 10px !important;
-// }
 
 .mat-menu-panel {
 	min-height: 0px !important;

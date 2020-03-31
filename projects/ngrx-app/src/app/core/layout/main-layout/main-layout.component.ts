@@ -21,8 +21,8 @@ export class MainLayoutComponent implements OnInit {
 
 	sideNavMenuOne = [
 		{ link: '/home', label: 'Home', icon: 'home' },
-		{ link: '/trendings', label: 'Trending', icon: 'code' },
-		{ link: '/subscriptions', label: 'Subscriptions', icon: 'palette' }
+		{ link: '/trendings', label: 'Trending', icon: 'whatshot' },
+		{ link: '/subscriptions', label: 'Subscriptions', icon: 'subscriptions' }
 	];
 
 	sideNavMenuTwo = [
