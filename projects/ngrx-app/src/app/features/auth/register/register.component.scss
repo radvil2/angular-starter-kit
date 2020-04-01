@@ -1,11 +1,11 @@
 @import '../../../../styles/variables';
 
 #auth-register {
-	padding: 20px 0px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
+	height: 100%;
+	padding-bottom: 20px;
 }
 
 .content {
@@ -16,9 +16,22 @@
 	}
 }
 
+.btn-submit a > span {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.flexed {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: -10px;
+}
+
 @media (max-width: map-get($grid-breakpoints, md)) {
 	.title {
-		margin: auto !important;
+		margin: 0px auto 20px !important
 	}
 }
 
@@ -34,5 +47,13 @@
 
 	mat-form-field {
 		font-size: 16px !important;
+	}
+
+	.btn-submit a > span {
+		text-align: center !important;
+	}
+
+	.flexed {
+		margin-top: 0px;
 	}
 }

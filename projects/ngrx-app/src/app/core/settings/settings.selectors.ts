@@ -31,7 +31,7 @@ export const selectHour = createSelector(
 export const selectIsNightHour = createSelector(
 	selectAutoNightMode,
 	selectHour,
-	(autoNightMode, hour) => autoNightMode && (hour >= 20 || hour <= 7) // above 8:00 PM under 07:00 AM
+	(autoNightMode, hour) => autoNightMode && (hour >= 19 || hour <= 7) // above 7:00 PM under 07:00 AM
 );
 
 export const selectEffectiveTheme = createSelector(

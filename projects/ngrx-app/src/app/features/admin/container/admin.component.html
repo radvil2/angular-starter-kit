@@ -1,5 +1,26 @@
-<div class="admin">
-  <mat-card [ngClass]="routeElementsAnimations">
-    <h1>This is align to center</h1>
-  </mat-card>
+<div id="admin">
+	<div class="sidenav">
+    <div class="sidenav-header">
+      <h3>Admin Panel</h3>
+    </div>
+		<div class="menu-item-list">
+      <a mat-button type="button" routerLink="/admin">Menu item one</a>
+      <mat-divider></mat-divider>
+		</div>
+		<div class="menu-item-list">
+      <a mat-button type="button" routerLink="/admin">Menu item two</a>
+      <mat-divider></mat-divider>
+		</div>
+		<div class="menu-item-list">
+      <a mat-button type="button" routerLink="/admin">Menu item three</a>
+      <mat-divider></mat-divider>
+		</div>
+	</div>
+
+	<main class="content card">
+		Main Content.. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+		Labore illo ut veniam similique officia nisi dolore. Molestiae delectus
+		magnam ad, sed reprehenderit beatae cumque vero possimus obcaecati numquam
+		consectetur perspiciatis.
+	</main>
 </div>

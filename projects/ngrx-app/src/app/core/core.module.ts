@@ -70,12 +70,12 @@ const PROVIDERS = [
 		RouterModule,
 
 		// materials
-		MatToolbarModule,
 		MatButtonModule,
+		MatMenuModule,
 		MatSnackBarModule,
+		MatToolbarModule,
 		MatIconModule,
 		MatListModule,
-		MatMenuModule,
 		MatProgressBarModule,
 		MatSidenavModule,
 		MatToolbarModule,
@@ -94,6 +94,7 @@ const PROVIDERS = [
 	exports: [
 		// materials
 		MatButtonModule,
+		MatMenuModule,
 		MatSnackBarModule,
 		MatToolbarModule,
 		MatIconModule,

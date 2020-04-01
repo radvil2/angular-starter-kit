@@ -1,21 +1,52 @@
 <div id="auth-login">
-	<div class="header">
-		<h2 class="badge lvl title">User Login</h2>
-	</div>
-
 	<div class="content card">
-		<p class="lead justify">
-			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
-			consectetur excepturi quisquam? Aliquid suscipit temporibus vitae?
-			Veritatis quisquam rerum aliquam sequi, ad iusto et debitis fugiat ullam
-			accusantium praesentium. Inventore?
-		</p>
+		<div [ngClass]="'header ' + routerElementsAnimations">
+			<div class="badge inline title">
+				<mat-icon>account_circle</mat-icon>
+				USER LOGIN
+			</div>
+		</div>
 
-		<span class="badge info">TODO LIST</span>
-		<ul class="lead">
-			<li>Manage state for the router</li>
-			<li>Make UI for login, ignore topbar just yet</li>
-			<li>Login custom component theme. DONT FORGET</li>
-		</ul>
+		<div class="container">
+			<form>
+				<div [ngClass]="'row ' + routerElementsAnimations">
+					<mat-form-field class="col-md-12" appearance="outline">
+						<mat-label>Username</mat-label>
+						<input matInput type="text" placeholder="Enter your username" />
+					</mat-form-field>
+				</div>
+
+				<div [ngClass]="'row ' + routerElementsAnimations">
+					<mat-form-field class="col-md-12" appearance="outline">
+						<mat-label>Password</mat-label>
+						<input
+							matInput
+							[type]="hideP ? 'password' : 'text'"
+							placeholder="Type your password"
+						/>
+
+						<mat-icon matSuffix (click)="hideP = !hideP">{{
+							hideP ? 'visibility_off' : 'visibility'
+						}}</mat-icon>
+					</mat-form-field>
+				</div>
+
+				<div [ngClass]="'row btn-submit ' + routerElementsAnimations">
+					<div class="col-md-3 col-sm-6">
+						<button mat-flat-button>
+							<mat-icon>fingerprint</mat-icon>
+							Login
+						</button>
+					</div>
+
+					<div class="col-sm-6 flexed">
+						<a type="button" routerLink="/auth/register">
+							<span>Create account ?</span>
+						</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- end of content -->
 	</div>
 </div>

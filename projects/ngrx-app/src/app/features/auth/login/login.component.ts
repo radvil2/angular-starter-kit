@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'rad-login',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-	constructor() {}
+	routerElementsAnimations = ROUTE_ANIMATIONS_ELEMENTS;
+	hideP = true;
+
+	constructor(private router: Router) {}
 
 	ngOnInit(): void {}
+
 }

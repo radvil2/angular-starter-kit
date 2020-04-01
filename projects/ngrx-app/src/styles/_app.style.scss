@@ -10,13 +10,18 @@ body {
 	width: 100%;
 }
 
-.header > h2 {
-	font-weight: 500;
-}
-
 .page-container {
 	font-weight: 300;
 	font-size: 1rem;
+
+	flex: 1 0 auto;
+	margin-top: 64px;
+	overflow: hidden;
+	// padding: 0px 20px;
+}
+
+.header > h2 {
+	font-weight: 500;
 }
 
 .justify {
@@ -30,8 +35,8 @@ body {
 }
 
 .btn-submit > div > button {
-  width: 100%;
-  height: 50px;
+	width: 100%;
+	height: 50px;
 	margin-bottom: 10px;
 	border-radius: 0px;
 
@@ -93,7 +98,7 @@ body {
 		font-weight: 300;
 		border-radius: 20px !important;
 		border: 1px solid #959595;
-	
+
 		mat-icon {
 			margin-left: -10px !important;
 			margin-right: 5px !important;
@@ -104,62 +109,52 @@ body {
 }
 
 /* App loading styles is underneath */
-.app-loading {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.app-loader {
+	height: 100vh;
+	width: 100vw;
+	background-color: #333333;
+	display: grid;
 	justify-content: center;
-	height: 100%;
+	align-items: center;
+	font-size: 2.5rem;
 
-	.logo {
-		width: 64px;
-		height: 64px;
-		background: url(../assets/icons/badge.svg) center center no-repeat;
-		background-size: cover;
+	.row {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1rem;
+		transform: translateY(-50%);
 	}
 
-	.spinner {
-		height: 200px;
-		width: 200px;
-		animation: rotate 2s linear infinite;
-		transform-origin: center center;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
+	.dot {
+		background-color: grey;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		animation: myAni 1s ease-in-out infinite alternate forwards;
+	}
+	.red {
+		background-color: #ee382b;
+		animation-delay: 0.2s;
+	}
 
-		.path {
-			stroke-dasharray: 1, 200;
-			stroke-dashoffset: 0;
-			animation: dash 1.5s ease-in-out infinite;
-			stroke-linecap: round;
-			stroke: rgb(72, 210, 252);
+	.yellow {
+		background-color: #fab800;
+		animation-delay: 0.4s;
+	}
+
+	.green {
+		background-color: #2fa550;
+		animation-delay: 0.6s;
+	}
+
+	.blue {
+		background-color: #397ef5;
+		animation-delay: 0.8s;
+	}
+
+	@keyframes myAni {
+		to {
+			transform: translateY(1rem);
 		}
-	}
-}
-
-@keyframes rotate {
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes dash {
-	0% {
-		stroke-dasharray: 1, 200;
-		stroke-dashoffset: 0;
-	}
-
-	50% {
-		stroke-dasharray: 89, 200;
-		stroke-dashoffset: -35px;
-	}
-
-	100% {
-		stroke-dasharray: 89, 200;
-		stroke-dashoffset: -124px;
 	}
 }

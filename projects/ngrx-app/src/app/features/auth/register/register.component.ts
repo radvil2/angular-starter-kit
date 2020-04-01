@@ -9,6 +9,7 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
 })
 export class RegisterComponent implements OnInit {
 	routerElementsAnimations = ROUTE_ANIMATIONS_ELEMENTS;
+	hideP = true;
 
 	constructor() {}
 
