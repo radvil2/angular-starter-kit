@@ -1,26 +1,138 @@
-<div id="admin">
-	<div class="sidenav">
-    <div class="sidenav-header">
-      <h3>Admin Panel</h3>
-    </div>
-		<div class="menu-item-list">
-      <a mat-button type="button" routerLink="/admin">Menu item one</a>
-      <mat-divider></mat-divider>
-		</div>
-		<div class="menu-item-list">
-      <a mat-button type="button" routerLink="/admin">Menu item two</a>
-      <mat-divider></mat-divider>
-		</div>
-		<div class="menu-item-list">
-      <a mat-button type="button" routerLink="/admin">Menu item three</a>
-      <mat-divider></mat-divider>
-		</div>
-	</div>
+<nav class="navbar">
+	<ul class="navbar-nav">
+		<li [ngClass]="'logo ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<img src="assets/icons/logo.png" class="user-photo" alt="User Photo" />
+				<span class="link-text">Meepo</span>
+			</a>
+		</li>
 
-	<main class="content card">
-		Main Content.. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-		Labore illo ut veniam similique officia nisi dolore. Molestiae delectus
-		magnam ad, sed reprehenderit beatae cumque vero possimus obcaecati numquam
-		consectetur perspiciatis.
-	</main>
-</div>
+		<mat-divider></mat-divider>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">account_circle</mat-icon>
+				<span class="link-text">My Blogs</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">format_color_fill</mat-icon>
+				<span class="link-text">My Gallery</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">colorize</mat-icon>
+				<span class="link-text">My Videos</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">format_paint</mat-icon>
+				<span class="link-text">Collections</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">code</mat-icon>
+				<span class="link-text">Categories</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">view_stream</mat-icon>
+				<span class="link-text">Comments</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">menu</mat-icon>
+				<span class="link-text">Statistics</span>
+			</a>
+		</li>
+
+		<li [ngClass]="'nav-item ' + routeElementsAnimations">
+			<a href="#" class="nav-link">
+				<mat-icon color="accent">settings</mat-icon>
+				<span class="link-text">Trash</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<main>
+	<div [ngClass]="'container card ' + routeElementsAnimations">
+		<h1>Injoker is Real</h1>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, quidem
+			debitis. Architecto, ullam quos quas iure odit molestias eveniet sint
+			consectetur, maxime modi atque placeat ab. Nesciunt libero rem aperiam?
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel perferendis
+			libero inventore adipisci reprehenderit, fugiat saepe, ad, optio eaque
+			voluptate veritatis corrupti voluptatum eos dolor praesentium ab illo
+			quibusdam delectus. Corrupti cumque, hic itaque ab unde recusandae tempore
+			velit id voluptates consectetur aspernatur perferendis nemo ratione
+			cupiditate iste quae explicabo? Natus dolorem sunt mollitia vitae
+			voluptate laudantium ipsum porro rem? Praesentium necessitatibus sint quas
+			magnam, veritatis magni minima ea similique adipisci architecto eius.
+			Suscipit explicabo amet officia illum aliquid eius error voluptatibus,
+			recusandae earum vero cum delectus id necessitatibus nulla?
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, ducimus
+			odio. Adipisci laboriosam animi modi deleniti earum, sint assumenda alias
+			ducimus illo vitae. In quasi quod eligendi dolores sint quae? Voluptate ea
+			eos, possimus laboriosam, aliquid dolores asperiores itaque minima eveniet
+			esse porro. Corporis dicta modi repellendus! Reprehenderit, similique
+			rerum impedit odit ut vel, ducimus reiciendis fugiat porro et at! Sunt
+			quam repellat perferendis est explicabo modi quasi blanditiis minima
+			adipisci! Magnam delectus atque iste aut ullam doloribus inventore illo
+			suscipit earum minus odit ex pariatur facilis, iusto a repellat!
+		</p>
+
+		<p>
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem neque
+			natus, minima corporis quis voluptatem aspernatur dolorum iure dicta
+			fugiat consectetur, soluta nulla doloribus! Laborum dignissimos quas natus
+			placeat consectetur!Sed, culpa quisquam! Vel sint ex dicta culpa ad quod
+			sapiente maxime accusamus eum nemo officia labore repellendus, illum
+			veritatis sequi. Consectetur ab provident asperiores iste illo libero
+			animi mollitia.
+		</p>
+
+		<p>
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum,
+			accusantium dolorum. Possimus ea vel dolore quaerat perspiciatis incidunt
+			fugit iure commodi reiciendis quia in, quo explicabo amet consequuntur
+			expedita. Voluptatum! Eveniet quibusdam quis, deserunt error soluta, vero
+			optio necessitatibus autem, alias iure placeat doloribus ratione fugiat
+			iusto repellat hic laborum maiores ut minima. Necessitatibus cumque
+			laborum inventore quidem molestias iste? Ut, cumque modi blanditiis velit
+			nobis esse dolore minima obcaecati nisi corrupti iusto, mollitia
+			temporibus, illum deleniti libero totam ab dolorem dicta non voluptate
+			numquam ullam vero. Amet, iusto. Quis! Beatae ullam veritatis officiis
+			accusamus libero earum, minima enim molestias recusandae tempore, error
+			vitae eveniet quas provident natus fuga, impedit maxime reprehenderit
+			facilis? Dolorem sapiente eius vel officiis magnam nihil! Repellendus
+			laudantium minus itaque maxime minima quis? Pariatur dicta aperiam
+			perspiciatis, laudantium assumenda inventore atque culpa, iste architecto
+			vel esse repellat possimus nesciunt voluptatum alias, autem mollitia aut!
+			Dolores, eius! Eaque sequi tempore recusandae quod voluptates maxime
+			doloremque reiciendis velit! Minima odit, quibusdam ratione labore aliquam
+			suscipit eius voluptate neque impedit quam, nulla error aut id illo?
+			Neque, aut magnam.
+		</p>
+	</div>
+</main>

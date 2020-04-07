@@ -6,6 +6,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import { selectEffectiveTheme, selectIsStickyHeader } from '../../index';
 import { routeAnimations } from '../../utils/animations';
+import * as MenuItems from './menu-item';
 
 @Component({
 	selector: 'rad-main-layout',
@@ -16,23 +17,7 @@ import { routeAnimations } from '../../utils/animations';
 export class MainLayoutComponent implements OnInit {
 	theme$: Observable<string>;
 	isStickyHeader$: Observable<boolean>;
-
-	topNavMenu = [
-		{ link: '/admin', label: 'Admin', icon: 'palette' },
-		{ link: '/dashboard', label: 'Dashboard', icon: 'format_paint' }
-	];
-
-	sideNavMenuOne = [
-		{ link: '/home', label: 'Home', icon: 'home' },
-		{ link: '/trendings', label: 'Trending', icon: 'whatshot' },
-		{ link: '/subscriptions', label: 'Subscriptions', icon: 'subscriptions' },
-		...this.topNavMenu
-	];
-
-	sideNavMenuTwo = [
-		{ link: '/about', label: 'About', icon: 'info' },
-		{ link: '/settings', label: 'Settings', icon: 'settings' }
-	];
+	menu = MenuItems;
 
 	constructor(
 		private breakpointObserver: BreakpointObserver,

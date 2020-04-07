@@ -23,7 +23,7 @@
 					<a
 						mat-list-item
 						(click)="sidenav.close()"
-						*ngFor="let menuItemOne of sideNavMenuOne"
+						*ngFor="let menuItemOne of menu.sideOne"
 						[routerLink]="menuItemOne.link"
 						routerLinkActive="active"
 					>
@@ -42,7 +42,7 @@
 					<a
 						mat-list-item
 						(click)="sidenav.close()"
-						*ngFor="let menuItemTwo of sideNavMenuTwo"
+						*ngFor="let menuItemTwo of menu.sideTwo"
 						[routerLink]="menuItemTwo.link"
 						routerLinkActive="active"
 					>
@@ -98,7 +98,7 @@
 						<a
 							mat-button
 							class="topnav-link"
-							*ngFor="let topNav of topNavMenu"
+							*ngFor="let topNav of menu.top"
 							[routerLink]="topNav.link"
 							routerLinkActive="active"
 						>
