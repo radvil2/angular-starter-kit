@@ -1,7 +1,7 @@
-<nav class="navbar">
+<nav class="navbar" [ngClass]="(isStickyHeader$ | async) ? '' : 'isNotSticky'">
 	<ul class="navbar-nav">
 		<li [ngClass]="'logo ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
+			<a routerLink="/profile" class="nav-link">
 				<img src="assets/icons/logo.png" class="user-photo" alt="User Photo" />
 				<span class="link-text">Meepo</span>
 			</a>

@@ -1,6 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
-import { menuAdmin } from '../../../core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { menuAdmin, selectIsStickyHeader } from '../../../core';
 
 @Component({
 	selector: 'rad-admin',
@@ -12,8 +14,11 @@ export class AdminComponent implements OnInit {
 	routeElementsAnimations = ROUTE_ANIMATIONS_ELEMENTS;
 	opened = true;
 	menu = menuAdmin;
+	isStickyHeader$: Observable<boolean>;
 
-	constructor() {}
+	constructor(private store: Store) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.isStickyHeader$ = this.store.pipe(select(selectIsStickyHeader));
+	}
 }

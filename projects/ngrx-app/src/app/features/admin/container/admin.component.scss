@@ -8,6 +8,11 @@
 	--transition-speed: 200ms;
 }
 
+.isNotSticky {
+	padding-top: 0px !important;
+	z-index: 10 !important;
+}
+
 main {
 	margin: 0 0 3rem 5rem;
 	padding: 0 1rem;
