@@ -6,3 +6,5 @@ export {
 } from './settings/settings.selectors';
 
 export { LocalStorageService } from './utils/local-storage.service';
+
+export * from './layout/menu-items';

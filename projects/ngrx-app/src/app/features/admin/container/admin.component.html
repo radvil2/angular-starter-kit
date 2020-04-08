@@ -9,59 +9,14 @@
 
 		<mat-divider></mat-divider>
 
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">account_circle</mat-icon>
-				<span class="link-text">My Blogs</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">format_color_fill</mat-icon>
-				<span class="link-text">My Gallery</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">colorize</mat-icon>
-				<span class="link-text">My Videos</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">format_paint</mat-icon>
-				<span class="link-text">Collections</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">code</mat-icon>
-				<span class="link-text">Categories</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">view_stream</mat-icon>
-				<span class="link-text">Comments</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">menu</mat-icon>
-				<span class="link-text">Statistics</span>
-			</a>
-		</li>
-
-		<li [ngClass]="'nav-item ' + routeElementsAnimations">
-			<a href="#" class="nav-link">
-				<mat-icon color="accent">settings</mat-icon>
-				<span class="link-text">Trash</span>
+		<li
+			*ngFor="let el of menu"
+			[ngClass]="'nav-item ' + routeElementsAnimations"
+			[class.d-none]="!el.isMobile"
+		>
+			<a [routerLink]="el.link" routerLinkActive="active" class="nav-link">
+				<mat-icon color="accent">{{ el.icon }}</mat-icon>
+				<span class="link-text">{{ el.label }}</span>
 			</a>
 		</li>
 	</ul>

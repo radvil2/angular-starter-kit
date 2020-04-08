@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
+import { menuAdmin } from '../../../core';
 
 @Component({
 	selector: 'rad-admin',
@@ -9,13 +10,8 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
 })
 export class AdminComponent implements OnInit {
 	routeElementsAnimations = ROUTE_ANIMATIONS_ELEMENTS;
-	opened= true;
-
-	adminMenu = [
-		{ link: '/home', label: 'Home', icon: 'home' },
-		{ link: '/trendings', label: 'Trending', icon: 'whatshot' },
-		{ link: '/subscriptions', label: 'Subscriptions', icon: 'subscriptions' }
-	];
+	opened = true;
+	menu = menuAdmin;
 
 	constructor() {}
 
