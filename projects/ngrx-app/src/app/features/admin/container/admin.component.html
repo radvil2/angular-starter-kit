@@ -1,23 +1,25 @@
-<nav class="navbar" [ngClass]="(isStickyHeader$ | async) ? '' : 'isNotSticky'">
-	<ul class="navbar-nav">
-		<li [ngClass]="'logo ' + routeElementsAnimations">
+<nav class="sidenav" [ngClass]="(isStickyHeader$ | async) ? '' : 'isNotSticky'">
+	<ul class="sidenav-list">
+		<li [ngClass]="'brand ' + routeElementsAnimations">
 			<a routerLink="/profile" class="nav-link">
-				<img src="assets/icons/logo.png" class="user-photo" alt="User Photo" />
-				<span class="link-text">Meepo</span>
+				<img src="assets/icons/logo.png" class="brand-img" alt="User Photo" />
+				<span class="link-text">Tutorial</span>
 			</a>
+			<mat-divider></mat-divider>
 		</li>
 
-		<mat-divider></mat-divider>
+		<!-- <mat-divider class="menu-spacer"></mat-divider> -->
 
+		<!-- Menu item -->
 		<li
 			*ngFor="let el of menu"
 			[ngClass]="'nav-item ' + routeElementsAnimations"
-			[class.d-none]="!el.isMobile"
 		>
-			<a [routerLink]="el.link" routerLinkActive="active" class="nav-link">
-				<mat-icon color="accent">{{ el.icon }}</mat-icon>
-				<span class="link-text">{{ el.label }}</span>
+			<a [routerLink]="el?.link" routerLinkActive="active" class="nav-link">
+				<mat-icon color="accent">{{ el?.icon }}</mat-icon>
+				<span class="link-text">{{ el?.label }}</span>
 			</a>
+			<mat-divider></mat-divider>
 		</li>
 	</ul>
 </nav>

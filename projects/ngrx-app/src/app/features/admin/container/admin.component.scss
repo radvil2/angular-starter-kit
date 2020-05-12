@@ -18,50 +18,75 @@ main {
 	padding: 0 1rem;
 }
 
-nav.navbar {
+nav.sidenav {
 	position: fixed;
 	background-color: var(--bg-primary);
 	transition: width 200ms ease;
-	padding-top: 50px; // check this
-	box-shadow: 0px 5px 18px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: var(--box-shadow);
 	z-index: 1;
+	width: 5rem;
+	height: 100vh;
 
-	ul.navbar-nav {
-		list-style: none;
-		padding: 0;
+	&:hover {
+		width: 16rem;
+
+		.brand img.brand-img {
+			transform: rotate(-180deg);
+		}
+
+		.nav-link.active {
+			justify-content: left;
+		}
+
+		.link-text {
+			display: block;
+			transition: opacity var(--transition-speed);
+		}
+	}
+
+	ul.sidenav-list {
 		margin: 0;
+		padding: 0;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		height: 100%;
+		justify-content: center;
+		list-style: none;
 
 		.nav-item {
 			width: 100%;
+
+			mat-icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
 			&:last-child {
 				margin-top: auto;
 			}
 		}
-	}
+	} // ul sidenav
 
-	&:hover .logo img.user-photo {
-		transform: rotate(-180deg);
-	}
+	// .menu-spacer {
+	//   height: 5px;
+	//   margin: 5px 0;
+	// }
 }
 
-.logo {
+.brand {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 1.5rem;
 	letter-spacing: 0.3ch;
 	display: flex;
 	align-items: center;
-	padding-left: 15px;
+	padding-left: 12px;
 	width: 100%;
 	color: var(--text-secondary);
 	background-color: var(--bg-secondary);
 
-	img.user-photo {
+	img.brand-img {
 		width: 50px;
 		height: 50px;
 		transition: transform var(--transition-speed);
@@ -69,13 +94,33 @@ nav.navbar {
 }
 
 .nav-link {
+	height: 4rem;
 	display: flex;
 	align-items: center;
-	height: 4rem;
-	color: var(--text-primary);
+	justify-content: center;
 	text-decoration: none;
+	color: var(--text-primary);
 	transition: var(--transition-speed);
 	filter: grayscale(100%) opacity(0.7);
+
+	&:hover {
+		justify-content: left; // check this out
+		margin-right: -25px;
+		background: var(--bg-secondary);
+		color: var(--text-secondary);
+		box-shadow: var(--box-shadow);
+		filter: grayscale(0%) opacity(1);
+
+		.brand-img {
+			transform: rotate(45deg);
+		}
+	}
+
+	&.active {
+		background-color: var(--bg-secondary);
+		filter: grayscale(20%) opacity(0.7);
+		margin-right: 0;
+	}
 
 	mat-icon {
 		font-size: 2rem;
@@ -84,71 +129,51 @@ nav.navbar {
 		transform: rotate(0deg);
 	}
 
-	&:hover {
-		background: var(--bg-secondary);
-		color: var(--text-secondary);
-		filter: grayscale(0%) opacity(1);
-
-		.user-photo {
-			transform: rotate(45deg);
-		}
-	}
-
 	.link-text {
 		display: none;
 		margin-left: 1rem;
 	}
-
-	&.active {
-		background-color: var(--bg-secondary);
-	}
 }
 
-// Small devices
+// small devices
 @media (max-width: map-get($grid-breakpoints, md)) {
-	nav.navbar {
-		bottom: 0px;
+	nav.sidenav {
+		bottom: -1px;
 		left: 0px;
 		width: 100vw;
 		height: 4rem;
 		padding-top: 0; // resetted
 
-		&:hover .link-text {
-			display: none;
+		&:hover {
+			width: 100vw !important; //resetted
+
+			.link-text {
+				display: none;
+			}
 		}
 
-		ul.navbar-nav {
+		ul.sidenav-list {
 			flex-direction: row !important;
 
-			.logo {
+			.brand {
+				display: none;
+			}
+
+			.mobile-hide {
 				display: none;
 			}
 
 			.nav-link {
 				justify-content: center;
+
+				&:hover {
+					margin-right: 0;
+				}
 			}
 		}
 	}
 
 	main {
 		margin: 0 0 20px 0;
-	}
-}
-
-// Large devices
-@media (min-width: map-get($grid-breakpoints, md)) {
-	.navbar {
-		top: 0;
-		width: 5rem;
-		height: 100vh;
-	}
-
-	.navbar:hover {
-		width: 16rem;
-	}
-
-	.navbar:hover .link-text {
-		display: block;
-		transition: opacity var(--transition-speed);
 	}
 }
