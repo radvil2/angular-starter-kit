@@ -41,7 +41,7 @@ mat-sidenav {
 
 		&.active,
 		&:hover {
-			border-right: solid 5px;
+			border-right: solid 3px;
 
 			mat-icon {
 				margin-right: -5px;
@@ -67,10 +67,6 @@ mat-sidenav-container {
 
 		.menu_top {
 			height: 100%;
-		}
-
-		mat-icon {
-			font-size: 30px;
 		}
 
 		.mat-button {
