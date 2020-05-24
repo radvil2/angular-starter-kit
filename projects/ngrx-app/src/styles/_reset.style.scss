@@ -24,10 +24,6 @@ ul {
 }
 
 // 3rd party styles reset
-mat-form-field {
-	font-weight: 300 !important;
-	font-size: 1rem !important;
-}
 
 .mat-drawer-container {
 	position: unset !important;
@@ -52,4 +48,23 @@ mat-form-field {
 
 .mat-button.nav-link {
 	border-radius: 0px !important;
+}
+
+.mat-list-item-content {
+	padding: 0 22px !important;
+}
+
+.menu_top .mat-list-item-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 63px;
+	padding: 0 22px;
+	font-size: 1rem;
+	font-weight: 400;
+
+	&:hover {
+		background-color: #000000bb;
+		color: white;
+	}
 }

@@ -1,10 +1,5 @@
 @import '../../../../styles/variables';
 
-mat-toolbar,
-.toolbar > mat-toolbar {
-	height: 50px;
-}
-
 .branding {
 	cursor: pointer;
 	overflow: hidden;
@@ -32,7 +27,7 @@ mat-toolbar,
 
 // sidenav
 mat-sidenav {
-	width: 256px;
+	width: 227px;
 }
 
 // sidenav list items
@@ -40,11 +35,8 @@ mat-sidenav {
 	padding: 0px;
 
 	a.mat-list-item {
-		font-size: 14px;
-		height: 46px;
-
 		.spacer {
-			flex: 1 0 auto;
+			width: 22px;
 		}
 
 		&.active,
@@ -68,29 +60,32 @@ mat-sidenav-container {
 		display: flex;
 		z-index: 10;
 
-		mat-icon {
-			font-size: 24px;
-			display: flex;
-			margin: auto;
+		// topbar spacer;
+		.spacer {
+			flex: 1 0 auto;
 		}
 
-		.mat-stroked-button {
+		.menu_top {
+			height: 100%;
+		}
+
+		mat-icon {
+			font-size: 30px;
+		}
+
+		.mat-button {
 			margin-right: 5px;
+			border: none;
 			border-radius: 0px;
 		}
 
-		// .mat-icon-button.user {
-		// 	border: solid 2px #0097a7;
-		// }
-
-		.spacer {
-			flex: 1 1 auto;
+		.mat-icon-button {
+			justify-content: center;
 		}
 
-		@media (max-width: map-get($grid-breakpoints, lg)) {
-			.nav-link {
-				min-width: 0;
-				padding: 0 10px;
+		@media (max-width: map-get($grid-breakpoints, md)) {
+			.menu_top {
+				display: none;
 			}
 		}
 	}

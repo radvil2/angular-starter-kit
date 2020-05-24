@@ -23,15 +23,13 @@
 					<a
 						mat-list-item
 						(click)="sidenav.close()"
-						*ngFor="let menuItemOne of menu.sideMenuOne"
-						[routerLink]="menuItemOne.link"
+						*ngFor="let menu of menu.items"
+						[routerLink]="menu.link"
 						routerLinkActive="active"
 					>
-						<span>{{ menuItemOne.label | uppercase }}</span>
-
+						<mat-icon>{{ menu.icon }}</mat-icon>
 						<span class="spacer"></span>
-
-						<mat-icon>{{ menuItemOne.icon }}</mat-icon>
+						<span>{{ menu.label }}</span>
 					</a>
 				</mat-nav-list>
 
@@ -42,15 +40,11 @@
 					<a
 						mat-list-item
 						(click)="sidenav.close()"
-						*ngFor="let menuItemTwo of menu.sideMenuTwo"
-						[routerLink]="menuItemTwo.link"
+						*ngFor="let menu of menu.itemsTwo"
+						[routerLink]="menu.link"
 						routerLinkActive="active"
 					>
-						<span>{{ menuItemTwo.label | uppercase }}</span>
-
-						<span class="spacer"></span>
-
-						<mat-icon>{{ menuItemTwo.icon }}</mat-icon>
+						<span>{{ menu.label }}</span>
 					</a>
 				</mat-nav-list>
 			</div>
@@ -76,10 +70,7 @@
 					</span>
 
 					<!-- topnav branding md -->
-					<span
-						routerLink=""
-						class="branding d-none d-sm-inline d-md-none"
-					>
+					<span routerLink="" class="branding d-none d-sm-inline d-md-none">
 						<img src="assets/icons/logo.png" />
 						<span>Injoker</span>
 					</span>
@@ -93,41 +84,23 @@
 					<!-- topnav spacer -->
 					<span class="spacer"></span>
 
-					<!-- topnav item list -->
-					<span class="d-none d-md-inline">
+					<div class="menu_top" *ngFor="let menu of menu.items">
+						<!-- login button -->
 						<a
-							mat-button
-							class="topnav-link"
-							*ngFor="let topNav of menu.topMenu"
-							[routerLink]="topNav.link"
+							mat-list-item
+							[routerLink]="menu.link"
 							routerLinkActive="active"
 						>
-							{{ topNav.label }}
+							{{ menu.label }}
 						</a>
-					</span>
-
-					<!-- login button -->
-					<button
-						mat-stroked-button
-						color="accent"
-						routerLink='auth/login'
-						routerLinkActive='active'
-					>
-						Login
-					</button>
-
-					<!-- register button -->
-					<button
-						mat-stroked-button
-						color="accent"
-						routerLink='auth/register'
-						routerLinkActive='active'
-					>
-						Register
-					</button>
+					</div>
 
 					<!-- menu toolbar button -->
-					<button mat-icon-button class="user" [matMenuTriggerFor]="toolbarUserMenu">
+					<button
+						mat-icon-button
+						class="user"
+						[matMenuTriggerFor]="toolbarUserMenu"
+					>
 						<mat-icon>account_circle</mat-icon>
 					</button>
 

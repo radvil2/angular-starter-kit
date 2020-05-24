@@ -5,12 +5,12 @@
 	$accent: map-get($theme, accent);
 	$warn: map-get($theme, warn);
 
-	#auth-login {
-		background-color: mat-color($primary, default-contrast);
-	}
+	// #auth-login {
+	// 	background-color: mat-color($foreground) !important;
+	// }
 
-	.badge.title {
-		background-color: mat-color($primary);
-		color: mat-color($primary, default-contrast);
-	}
+	// .badge.title {
+	// 	background-color: mat-color($primary);
+	// 	color: mat-color($primary, default-contrast);
+	// }
 }

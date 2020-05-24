@@ -16,6 +16,10 @@
 				}
 			}
 
+			.mat-list-item {
+				color: mat-color($primary, default-contrast);
+			}
+
 			.link {
 				color: mat-color($primary, default-contrast);
 			}
