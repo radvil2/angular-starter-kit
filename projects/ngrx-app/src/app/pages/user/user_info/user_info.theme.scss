@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+
+@mixin rad-user_info-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+
+	.edit_profile {
+		background-color: mat-color($primary);
+		a, mat-icon {
+			color: mat-color($accent);
+		}
+	}
+}

@@ -1,0 +1,45 @@
+<div class="blog_tile">
+	<div class="tile_header">
+		<div (click)="authorName.click()" class="user_photo">
+			<img [src]="blog?.author?.photo" alt="photo" />
+		</div>
+		<div class="blog_meta">
+			<div (click)="navigateToAuthorProfile()" #authorName class="name">
+				{{ blog?.author.name }}
+			</div>
+			<div class="date">
+				{{ blog?.date }}
+			</div>
+		</div>
+		<div (click)="showTileMenu()" class="action">
+			<button mat-icon-button><mat-icon>more_horiz</mat-icon></button>
+		</div>
+	</div>
+
+	<div class="tile_content">
+		<div *ngIf="blog?.intro" class="content_caption giveMeEllipsis">
+			{{ blog?.intro }}
+		</div>
+
+		<div (click)="navigateToBlog()" class="content_blog">
+			<div
+				[style]="'background-image: url(' + blog?.image + ');'"
+				class="blog_image"
+			></div>
+			<div class="blog_title">
+				{{ blog?.title }}
+			</div>
+		</div>
+	</div>
+
+	<div (click)="showActionsWindow()" class="tile_totals">
+		<div class="likes">{{ blog?.likes }} likes</div>
+		<div class="spacer"></div>
+		<div class="comments">{{ blog?.comments }} comments</div>
+		<div class="shares">{{ blog?.shares }} shares</div>
+	</div>
+
+	<ng-container>
+		<rad-tile_actions></rad-tile_actions>
+	</ng-container>
+</div>

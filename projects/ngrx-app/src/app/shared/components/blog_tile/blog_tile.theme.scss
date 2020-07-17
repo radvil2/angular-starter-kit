@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@mixin rad-blog_tile-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+
+	.content_blog:hover {
+    .blog_title {
+      color: mat-color($accent);
+    }
+  }
+}

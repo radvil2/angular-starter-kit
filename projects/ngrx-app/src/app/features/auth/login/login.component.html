@@ -10,14 +10,14 @@
 		<div class="container">
 			<form>
 				<div [ngClass]="'row ' + routerElementsAnimations">
-					<mat-form-field class="col-md-12" appearance="outline" color="accent">
+					<mat-form-field class="form__row" appearance="outline" color="accent">
 						<mat-label>Username</mat-label>
 						<input matInput type="text" placeholder="Enter your username" />
 					</mat-form-field>
 				</div>
 
 				<div [ngClass]="'row ' + routerElementsAnimations">
-					<mat-form-field class="col-md-12" appearance="outline" color="accent">
+					<mat-form-field class="form__row" appearance="outline" color="accent">
 						<mat-label>Password</mat-label>
 						<input
 							matInput
@@ -31,19 +31,15 @@
 					</mat-form-field>
 				</div>
 
-				<div [ngClass]="'row btn-submit ' + routerElementsAnimations">
-					<div class="col-md-6 col-sm-6">
-						<button mat-flat-button disabled>
-							<mat-icon>fingerprint</mat-icon>
-							Login
-						</button>
-					</div>
+				<div [ngClass]="'x-row ' + routerElementsAnimations">
+					<button class="x1" mat-flat-button disabled>
+						<mat-icon>fingerprint</mat-icon>
+						Login
+					</button>
 
-					<div class="col-sm-6 flexed">
-						<a type="button" routerLink="/auth/register">
-							<span>Create account ?</span>
-						</a>
-					</div>
+					<a class="x1 create" type="button" routerLink="/auth/register">
+						<span>Create account ?</span>
+					</a>
 				</div>
 			</form>
 		</div>

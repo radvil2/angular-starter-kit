@@ -1,0 +1,36 @@
+.xr {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.options {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 10px;
+}
+.btn-create {
+	font-weight: 400;
+	padding: 10px;
+	border-radius: 25px;
+  flex-basis: 46%;
+  justify-content: center;
+  cursor: pointer;
+  filter: contrast(0.95);
+
+	mat-icon {
+		margin-right: 10px;
+  }
+  
+  &:hover {
+    filter: contrast(1);
+  }
+}
+
+@media(max-width: 777px) {
+  .btn-create {
+    font-size: 0.9rem;
+    mat-icon {
+      margin-right: 5px;
+    }
+  }
+}

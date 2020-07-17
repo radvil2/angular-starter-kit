@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+
+@mixin rad-user_edit-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  // style underneath;
+}

@@ -1,0 +1,12 @@
+.fx-row {
+	display: flex;
+	flex-direction: row;
+}
+.user_detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 150px;
+	font-size: 18px;
+	font-weight: 400;
+}

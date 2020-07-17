@@ -1,0 +1,24 @@
+<div class="content">
+	<section>
+		<rad-user_detail
+		[userDetail]="user"></rad-user_detail>
+	</section>
+
+	<section>
+		<rad-feature_images
+			[featureImages]="featureImages"
+		></rad-feature_images>
+	</section>
+
+	<section>
+		<rad-write_post></rad-write_post>
+	</section>
+
+	<section>
+		<rad-blog_tile
+			*ngFor="let element of blogs"
+			[blog]="element"
+		></rad-blog_tile>
+	</section>
+
+</div>

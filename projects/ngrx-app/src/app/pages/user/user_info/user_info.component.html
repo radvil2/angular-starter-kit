@@ -1,0 +1,12 @@
+<section>
+	<div [ngClass]="'user_detail ' + animate">
+		<ng-container *ngFor="let row of rowData">
+			<rad-row_detail [data]="row"></rad-row_detail>
+		</ng-container>
+
+		<div class="edit_profile">
+			<mat-icon>edit</mat-icon>
+			<a [routerLink]="'/user/edit/' + userId">Edit Public Info</a>
+		</div>
+	</div>
+</section>

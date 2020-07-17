@@ -8,3 +8,5 @@ export {
 export { LocalStorageService } from './utils/local-storage.service';
 
 export * from './layout/menu-items';
+
+export * from './data';

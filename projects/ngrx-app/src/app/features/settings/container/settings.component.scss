@@ -3,6 +3,14 @@
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+
+	@media (max-width: 777px) {
+		justify-content: unset;
+
+		.card {
+			width: 100%;
+		}
+	}
 }
 
 h2 {

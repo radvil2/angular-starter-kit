@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+@mixin rad-write_post-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+
+	.btn-create {
+		background-color: mat-color($primary);
+		color: mat-color($primary, default-contrast);
+	}
+	.write_post {
+		border: 1px solid mat-color($primary, default-contrast);
+	}
+}

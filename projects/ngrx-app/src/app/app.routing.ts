@@ -4,7 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'about',
+		redirectTo: 'user',
 		pathMatch: 'full'
 	},
 	{
@@ -18,6 +18,11 @@ const routes: Routes = [
 			import('./features/settings/settings.module').then(
 				(m) => m.SettingsModule
 			)
+	},
+	{
+		path: 'user',
+		loadChildren: () =>
+			import('./pages/user/user.module').then((m) => m.UserModule)
 	},
 	{
 		path: '**',

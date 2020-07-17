@@ -10,11 +10,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -47,36 +50,11 @@ import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 	declarations: [],
 	imports: [
 		// vendor
-		CommonModule,
-		RouterModule,
-		FormsModule,
-		ReactiveFormsModule,
-
-		// material
-		MatButtonModule,
-		MatCardModule,
-		MatFormFieldModule,
-		MatInputModule,
-		MatIconModule,
-		MatListModule,
-		MatMenuModule,
-		MatSelectModule,
-		MatSidenavModule,
-		MatSlideToggleModule,
-		MatSnackBarModule,
-		MatSliderModule,
-		MatToolbarModule,
-		MatTooltipModule,
-
-		// 3rd party
-		FontAwesomeModule
+		CommonModule
 	],
 	exports: [
 		// vendor
 		CommonModule,
-		RouterModule,
-		FormsModule,
-		ReactiveFormsModule,
 
 		// material
 		MatButtonModule,
@@ -86,11 +64,14 @@ import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 		MatIconModule,
 		MatListModule,
 		MatMenuModule,
+		MatProgressBarModule,
+		MatProgressSpinnerModule,
 		MatSelectModule,
 		MatSidenavModule,
 		MatSlideToggleModule,
 		MatSnackBarModule,
 		MatSliderModule,
+		MatTabsModule,
 		MatToolbarModule,
 		MatTooltipModule,
 		// 3rd party

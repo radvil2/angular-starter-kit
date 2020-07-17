@@ -1,5 +1,5 @@
 * {
-	font-family: Ubuntu, Roboto;
+	font-family: Roboto;
 
 	&:active,
 	:focus {
@@ -21,6 +21,10 @@ p {
 
 ul {
 	margin-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
 }
 
 // 3rd party styles reset
@@ -65,6 +69,5 @@ ul {
 
 	&:hover {
 		background-color: #000000bb;
-		color: white;
 	}
 }

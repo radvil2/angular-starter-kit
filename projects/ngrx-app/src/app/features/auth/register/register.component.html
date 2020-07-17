@@ -10,19 +10,19 @@
 		<div class="container">
 			<form>
 				<div [ngClass]="'row ' + routerElementsAnimations">
-					<mat-form-field color="accent" appearance="fill" class="col-md-12">
+					<mat-form-field class="form__row" color="accent" appearance="fill">
 						<mat-label>Full Name</mat-label>
 						<input matInput type="text" placeholder="Enter your name" />
 					</mat-form-field>
 				</div>
 
-				<div [ngClass]="'row ' + routerElementsAnimations">
-					<mat-form-field color="accent" appearance="fill" class="col-md-6">
+				<div [ngClass]="'x-row jc-sb ' + routerElementsAnimations">
+					<mat-form-field class="x-base" color="accent" appearance="fill">
 						<mat-label>Username</mat-label>
 						<input matInput type="text" placeholder="Enter your username" />
 					</mat-form-field>
 
-					<mat-form-field color="accent" appearance="fill" class="col-md-6">
+					<mat-form-field class="x-base" color="accent" appearance="fill">
 						<mat-label>Email address</mat-label>
 						<input
 							matInput
@@ -32,8 +32,8 @@
 					</mat-form-field>
 				</div>
 
-				<div [ngClass]="'row ' + routerElementsAnimations">
-					<mat-form-field color="accent" appearance="fill" class="col-md-6">
+				<div [ngClass]="'x-row jc-sb ' + routerElementsAnimations">
+					<mat-form-field class="x-base" color="accent" appearance="fill">
 						<mat-label>Password</mat-label>
 						<input
 							matInput
@@ -46,7 +46,7 @@
 						}}</mat-icon>
 					</mat-form-field>
 
-					<mat-form-field color="accent" appearance="fill" class="col-md-6">
+					<mat-form-field class="x-base" color="accent" appearance="fill">
 						<mat-label>Confirm password</mat-label>
 						<input
 							matInput
@@ -60,14 +60,12 @@
 					</mat-form-field>
 				</div>
 
-				<div [ngClass]="'row btn-submit ' + routerElementsAnimations">
-					<div class="col-md-3 col-sm-6">
-						<button mat-flat-button disabled>Register</button>
-					</div>
+				<div [ngClass]="'x-row actions jc-sb ' + routerElementsAnimations">
+					<button class="x-base" mat-flat-button disabled>Register</button>
 
-					<div class="col-sm-6 flexed">
-						<a routerLink="/auth/login"><span>Already have account ?</span></a>
-					</div>
+					<a class="x-base" routerLink="/auth/login">
+						<span>Already have an account ?</span>
+					</a>
 				</div>
 			</form>
 		</div>

@@ -11,12 +11,28 @@
 @import '../app/core/layout/main-layout/main-layout.theme';
 @import '../app/core/layout/footer/footer.theme';
 @import '../app/features/auth/login/login.theme';
+@import '../app/pages/user/container/_user.theme';
+@import '../app/pages/user/user_timeline/_user_timeline.theme';
+@import '../app/pages/user/user_info/user_info.theme';
+@import '../app/pages/user/user_edit/_user_edit.theme';
+
+@import '../app/pages/user/components/user_figure/_user_figure.theme';
+@import '../app/shared/components/blog_tile/blog_tile.theme';
+@import '../app/shared/components/write_post/write_post.theme';
 
 @mixin custom-components-theme($theme) {
 	@include rad-reset-theme($theme);
 	@include rad-main-layout-theme($theme);
 	@include rad-footer-theme($theme);
 	@include rad-feature-login-theme($theme);
+	@include rad-user-theme($theme);
+	@include rad-user_timeline-theme($theme);
+	@include rad-user_edit-theme($theme);
+	@include rad-user_info-theme($theme);
+
+	@include rad-user_figure-theme($theme);
+	@include rad-blog_tile-theme($theme);
+	@include rad-write_post-theme($theme);
 }
 
 .default-theme {

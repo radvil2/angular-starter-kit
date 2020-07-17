@@ -1,8 +1,8 @@
 export const items = [
 	{ link: '/home', label: 'Home', icon: 'home' },
-	{ link: '/trendings', label: 'Trending', icon: 'whatshot' },
-	{ link: '/subscriptions', label: 'Subscriptions', icon: 'subscriptions' },
-	{ link: '/dashboard', label: 'Dashboard', icon: 'format_paint' }
+	{ link: '/trends', label: 'Trends', icon: 'whatshot' },
+	{ link: '/dashboard', label: 'Dashboard', icon: 'apps' },
+	{ link: '/about', label: 'About', icon: 'info' },
 ];
 
 export const itemsTwo = [

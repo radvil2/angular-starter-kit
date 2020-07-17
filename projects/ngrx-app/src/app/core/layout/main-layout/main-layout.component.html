@@ -5,8 +5,8 @@
 			<!-- sidenav toolbar -->
 			<mat-toolbar color="primary">
 				<!-- sidenav button drawer -->
-				<button mat-icon-button class="d-md-none" (click)="sidenav.toggle()">
-					<mat-icon>menu</mat-icon>
+				<button mat-icon-button (click)="sidenav.toggle()">
+					<mat-icon>close</mat-icon>
 				</button>
 
 				<!-- sidenav branding -->
@@ -61,32 +61,20 @@
 			>
 				<mat-toolbar color="primary">
 					<!-- topnav button drawer -->
-					<button mat-icon-button class="d-md-none" (click)="sidenav.toggle()">
+					<button mat-icon-button class="btn__menu" (click)="sidenav.toggle()">
 						<mat-icon>menu</mat-icon>
 					</button>
 
-					<!-- topnav branding sm -->
-					<span routerLink="" class="branding d-inline d-sm-none">
-						<img src="assets/icons/logo.png" />
-					</span>
-
-					<!-- topnav branding md -->
-					<span routerLink="" class="branding d-none d-sm-inline d-md-none">
-						<img src="assets/icons/logo.png" />
-						<span>Injoker</span>
-					</span>
-
 					<!-- topnav branding md ? -->
-					<span routerLink="" class="branding d-none d-md-inline">
+					<div routerLink="" class="branding">
 						<img src="assets/icons/logo.png" />
 						<span>Injoker</span>
-					</span>
+					</div>
 
 					<!-- topnav spacer -->
 					<span class="spacer"></span>
 
 					<div class="menu_top" *ngFor="let menu of menu.items">
-						<!-- login button -->
 						<a
 							mat-list-item
 							[routerLink]="menu.link"
@@ -107,10 +95,22 @@
 
 					<!-- menu toolbar container -->
 					<mat-menu #toolbarUserMenu="matMenu">
-						<!-- menu settings -->
-						<button mat-menu-item routerLink="profile">
+						<!-- menu register -->
+						<button mat-menu-item routerLink="auth/register">
+							<mat-icon>person_add</mat-icon>
+							<span>Register</span>
+						</button>
+
+						<!-- menu login -->
+						<button mat-menu-item routerLink="auth/login">
+							<mat-icon>fingerprint</mat-icon>
+							<span>Login</span>
+						</button>
+
+						<!-- menu user profile -->
+						<button mat-menu-item routerLink="user">
 							<mat-icon>account_circle</mat-icon>
-							<span>User Profile</span>
+							<span>Profile</span>
 						</button>
 
 						<!-- menu settings -->
@@ -121,7 +121,7 @@
 
 						<!-- menu logout -->
 						<button mat-menu-item>
-							<mat-icon>fingerprint</mat-icon>
+							<mat-icon>power_settings_new</mat-icon>
 							<span>Logout</span>
 						</button>
 					</mat-menu>

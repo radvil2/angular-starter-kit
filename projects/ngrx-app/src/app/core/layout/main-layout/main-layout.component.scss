@@ -2,7 +2,8 @@
 
 .branding {
 	cursor: pointer;
-	overflow: hidden;
+	display: flex;
+	align-items: center;
 
 	span {
 		font-weight: 600;
@@ -16,6 +17,12 @@
 		position: relative;
 		width: 36px;
 		height: 36px;
+	}
+}
+
+.btn__menu {
+	@media (min-width: 777px) {
+		display: none;
 	}
 }
 
@@ -96,9 +103,9 @@ mat-sidenav-container {
 		flex-direction: column;
 	}
 
-	@media (max-width: $toolbar-breakpoint) {
+	@media (max-width: 777px) {
 		.page-container {
-			margin-top: 56px !important;
+			margin-top: 35px !important;
 		}
 	}
 }

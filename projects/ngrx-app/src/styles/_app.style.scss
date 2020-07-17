@@ -109,12 +109,12 @@ body {
 	&.title {
 		display: flex;
 		place-items: center;
-		padding: 0px 20px;
+		padding: 5px 20px;
 		margin-bottom: 20px;
 		font-size: 1.3rem;
 		font-weight: 400;
 		border-radius: 20px !important;
-		border: 2px solid #959595;
+		border: 1px solid #959595;
 
 		mat-icon {
 			margin-left: -10px !important;
@@ -122,6 +122,12 @@ body {
 			height: 25px !important;
 			width: 25px !important;
 		}
+	}
+}
+
+.hd-mb {
+	@media (max-width: 777px) {
+		display: none;
 	}
 }
 

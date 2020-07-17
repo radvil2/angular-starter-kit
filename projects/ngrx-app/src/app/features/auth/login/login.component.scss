@@ -5,6 +5,7 @@
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+	padding: 0 10px;
 }
 
 .content {
@@ -15,6 +16,10 @@
 	border: 2px solid #5858582b;
 }
 
+.form__row {
+	width: 100%;
+}
+
 .mat-flat-button {
 	height: 60px;
 
@@ -23,23 +28,21 @@
 	}
 }
 
-.btn-submit a > span {
-	font-size: 14px;
-	font-weight: 500;
-}
-
-.flexed {
+.x-row {
 	display: flex;
-	align-content: center;
-	justify-content: center;
-	flex-direction: column;
-	margin-top: -10px;
+	flex-direction: row;
+	align-items: center;
+
+	.x1 {
+		flex: 1;
+	}
+
+	.create {
+		margin-left: 20px;
+	}
 }
 
 @media (max-width: map-get($grid-breakpoints, md)) {
-	.title {
-		margin: 0px auto 20px !important;
-	}
 
 	.content {
 		padding: 10px !important;
@@ -61,9 +64,5 @@
 
 	mat-form-field {
 		font-size: 16px !important;
-	}
-
-	.flexed {
-		margin-top: 0px;
 	}
 }
