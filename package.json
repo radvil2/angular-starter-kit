@@ -53,7 +53,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "pretty-quick": "^2.0.1",
-    "rxjs": "~6.5.4",
+    "rxjs": "~6.6.0",
     "tslib": "^1.10.0",
     "typeface-roboto": "0.0.75",
     "typeface-ubuntu": "0.0.65",
