@@ -1,0 +1,19 @@
+// sidenav list items
+.mat-nav-list {
+	padding: 0px;
+
+	a.mat-list-item {
+		.spacer {
+			width: 22px;
+		}
+
+		&.active,
+		&:hover {
+			border-right: solid 3px;
+
+			mat-icon {
+				margin-right: -5px;
+			}
+		}
+	}
+}

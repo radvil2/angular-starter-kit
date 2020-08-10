@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IBlog, BlogService, IUser, UserService } from '../../../core';
+import { IBlog, BlogService, IUser, UserService } from '../../../_core';
 
 @Component({
 	selector: 'rad-user_timeline',

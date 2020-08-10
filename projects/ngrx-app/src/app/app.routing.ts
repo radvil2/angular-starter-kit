@@ -4,18 +4,18 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'user',
+		redirectTo: 'auth',
 		pathMatch: 'full'
 	},
 	{
 		path: 'auth',
 		loadChildren: () =>
-			import('./features/auth/auth.module').then((m) => m.AuthModule)
+			import('./pages/auth/auth.module').then((m) => m.AuthModule)
 	},
 	{
 		path: 'settings',
 		loadChildren: () =>
-			import('./features/settings/settings.module').then(
+			import('./pages/settings/settings.module').then(
 				(m) => m.SettingsModule
 			)
 	},
@@ -35,7 +35,7 @@ const routes: Routes = [
 		RouterModule.forRoot(routes, {
 			useHash: false,
 			scrollPositionRestoration: 'enabled',
-			preloadingStrategy: PreloadAllModules
+			// preloadingStrategy: PreloadAllModules
 		})
 	],
 	exports: [RouterModule]

@@ -6,7 +6,9 @@ export const environment = {
 	appName: 'Ngrx App',
 	envName: 'DEV',
 	production: false,
-	version: '1.8.2'
+	version: '1.8.2',
+
+	apiUrl: 'http://localhost:3000/api/v1'
 };
 
 /*

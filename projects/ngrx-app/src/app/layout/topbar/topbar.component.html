@@ -1,0 +1,83 @@
+<!-- topnav toolbar -->
+<div
+	class="toolbar"
+	[style.position]="(isStickyHeader$ | async) ? 'fixed' : 'inherit'"
+	[class.mat-elevation-z5]="isStickyHeader$ | async"
+>
+	<mat-toolbar color="primary">
+		<!-- topnav button drawer -->
+		<button mat-icon-button class="btn__menu" (click)="sendEventToLayout()">
+			<mat-icon>menu</mat-icon>
+		</button>
+
+		<!-- topnav branding md ? -->
+		<div routerLink="" class="branding">
+			<img src="assets/icons/logo.png" />
+			<span>Injoker</span>
+		</div>
+
+		<!-- topnav spacer -->
+		<span class="spacer"></span>
+
+		<div class="menu_top" *ngFor="let menu of menu.items">
+			<a
+				*ngIf="!menu.isPrivate || (isAuthenticated$ | async)"
+				mat-list-item
+				[routerLink]="menu.link"
+				routerLinkActive="active"
+			>
+				{{ menu.label }}
+			</a>
+		</div>
+
+		<!-- menu toolbar button -->
+		<button mat-icon-button class="user" [matMenuTriggerFor]="toolbarUserMenu">
+			<mat-icon>account_circle</mat-icon>
+		</button>
+
+		<!-- menu toolbar container -->
+		<mat-menu #toolbarUserMenu="matMenu">
+			<!-- menu register -->
+			<button
+				*ngIf="!(isAuthenticated$ | async)"
+				mat-menu-item
+				routerLink="auth/register"
+			>
+				<mat-icon>person_add</mat-icon>
+				<span>Register</span>
+			</button>
+
+			<!-- menu login -->
+			<button
+				*ngIf="!(isAuthenticated$ | async)"
+				mat-menu-item
+				routerLink="auth/login"
+			>
+				<mat-icon>fingerprint</mat-icon>
+				<span>Login</span>
+			</button>
+
+			<!-- menu user profile -->
+			<button *ngIf="isAuthenticated$ | async" mat-menu-item routerLink="user">
+				<mat-icon>account_circle</mat-icon>
+				<span>Profile</span>
+			</button>
+
+			<!-- menu settings -->
+			<button mat-menu-item routerLink="settings">
+				<mat-icon>settings</mat-icon>
+				<span>Settings</span>
+			</button>
+
+			<!-- menu logout -->
+			<button
+				*ngIf="isAuthenticated$ | async"
+				(click)="logoutUser()"
+				mat-menu-item
+			>
+				<mat-icon>power_settings_new</mat-icon>
+				<span>Logout</span>
+			</button>
+		</mat-menu>
+	</mat-toolbar>
+</div>

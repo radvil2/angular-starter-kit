@@ -1,0 +1,76 @@
+* {
+	font-family: Roboto;
+
+	&:active,
+	:focus {
+		outline: none !important;
+	}
+}
+
+code {
+	white-space: nowrap;
+	border-radius: 10px;
+	padding: 0 8px 1px 8px;
+}
+
+p {
+	a {
+		border-bottom: 3px solid;
+	}
+}
+
+ul {
+	margin-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+// 3rd party styles reset
+mat-toolbar {
+	height: 55px !important;
+}
+
+.mat-drawer-container {
+	position: unset !important;
+}
+
+.mat-drawer-inner-container {
+	overflow-x: hidden !important;
+}
+
+.mat-menu-content {
+	padding: 0px !important;
+}
+
+.mat-menu-panel {
+	min-height: 0px !important;
+	border-radius: 0px !important;
+}
+
+.mat-dialog-container {
+	border-radius: 0px !important;
+}
+
+.mat-button.nav-link {
+	border-radius: 0px !important;
+}
+
+.mat-list-item-content {
+	padding: 0 22px !important;
+}
+
+.menu_top .mat-list-item-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 0 22px;
+	font-size: 1rem;
+	font-weight: 400;
+
+	&:hover {
+		background-color: #000000bb;
+	}
+}

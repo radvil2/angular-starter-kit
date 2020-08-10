@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import {
-	SharedModule,
-	TileActions,
-	WritePost,
-	TruncatePipe
-} from '../../../shared';
-import { UserDetail, FeatureImages } from '../components';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
+import {
+	TileActionsModule,
+	WritePostModule,
+	TruncatePipe,
+	BlogTileModule
+} from '../../../_shared';
+import { UserDetail, FeatureImages } from '../_components';
 import { UserTimelineComponent } from './user_timeline.component';
-import { BlogTile } from '../../../shared/components/blog_tile/blog_tile';
 
 const routes: Routes = [
 	{
@@ -23,14 +25,19 @@ const routes: Routes = [
 @NgModule({
 	declarations: [
 		UserTimelineComponent,
-		TileActions,
 		UserDetail,
 		FeatureImages,
-		WritePost,
-		BlogTile,
-
 		TruncatePipe
 	],
-	imports: [RouterModule.forChild(routes), SharedModule],
+	imports: [
+		CommonModule,
+		MatIconModule,
+		MatProgressBarModule,
+		RouterModule.forChild(routes),
+
+		TileActionsModule,
+		BlogTileModule,
+		WritePostModule,
+	]
 })
 export class UserTimelineModule {}

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedModule } from '../../../shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 
 import { UserInfoComponent } from './user_info.component';
-import { RowDetail } from '../components';
+import { RowDetail } from '../_components';
 
 const routes: Routes = [
 	{
@@ -16,6 +17,6 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [UserInfoComponent, RowDetail],
-	imports: [SharedModule, RouterModule.forChild(routes)]
+	imports: [CommonModule, MatIconModule, RouterModule.forChild(routes)]
 })
 export class UserInfoModule {}

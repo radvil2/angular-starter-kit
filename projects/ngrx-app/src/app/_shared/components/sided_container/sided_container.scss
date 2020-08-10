@@ -1,0 +1,46 @@
+.sided-container {
+	display: flex;
+	flex-direction: row;
+	padding: 0 20px;
+
+	.left,
+	.right {
+		flex-basis: 22%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.middle {
+		flex-basis: 55%;
+		padding: 0 20px;
+	}
+
+	@media (max-width: 999px) {
+		.left {
+			display: none;
+		}
+		.middle {
+			flex-basis: 77%;
+		}
+		.right {
+			flex-basis: 33%;
+		}
+	}
+
+	@media (max-width: 777px) {
+		padding: unset;
+		flex-direction: column;
+
+		.left {
+			order: 2;
+		}
+		.right {
+			order: 3;
+		}
+		.middle {
+			order: 1;
+			flex-basis: 100%;
+			padding: 0;
+		}
+	}
+}

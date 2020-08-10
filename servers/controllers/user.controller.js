@@ -16,7 +16,7 @@ const { checkExist, replaceImage } = require('../utils/helpers');
  *
  *	## Example Route:
  *
- *	/users/search?page=2&limit=1&sort=createdAt&field=username&value=test
+ *	/users?page=2&limit=1&sort=createdAt&field=username&value=test
  *
  *	@TODO ## Should we just delete the search route?
  */

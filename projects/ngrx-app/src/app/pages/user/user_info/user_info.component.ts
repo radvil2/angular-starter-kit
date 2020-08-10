@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/utils/animations';
-import { I_RowData } from '../components';
-import { IUser, UserService } from '../../../core';
+import { IUser, UserService, ROUTE_ANIMATIONS_ELEMENTS } from '../../../_core';
+import { I_RowData } from '../_components';
 import { RowDataSource } from './row_data.source';
 
 @Component({

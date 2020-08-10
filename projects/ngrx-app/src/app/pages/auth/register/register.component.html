@@ -1,0 +1,122 @@
+<div id="auth-register">
+	<div class="content card">
+		<div [ngClass]="'header ' + routeAnimatedEl">
+			<div class="badge inline title">
+				<mat-icon>account_circle</mat-icon>
+				USER REGISTRATION
+			</div>
+		</div>
+
+		<div class="container">
+			<form [formGroup]="form" (ngSubmit)="registerUser()">
+				<div [ngClass]="'row ' + routeAnimatedEl">
+					<mat-form-field class="form__row" color="accent" appearance="fill">
+						<mat-label>Full Name</mat-label>
+						<input
+							formControlName="name"
+							matInput
+							type="text"
+							placeholder="Enter your name"
+						/>
+						<mat-error *ngIf="form.get('name').hasError('required')">
+							Full Name is required
+						</mat-error>
+					</mat-form-field>
+				</div>
+
+				<div [ngClass]="'x-row jc-sb ' + routeAnimatedEl">
+					<mat-form-field class="x-base" color="accent" appearance="fill">
+						<mat-label>Username</mat-label>
+						<input
+							formControlName="username"
+							matInput
+							type="text"
+							placeholder="Enter your username"
+						/>
+						<mat-error *ngIf="form.get('username').hasError('required')">
+							Username is required
+						</mat-error>
+						<mat-error *ngIf="form.get('username').hasError('minlength')">
+							Min 3 chars allowed
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="x-base" color="accent" appearance="fill">
+						<mat-label>Email address</mat-label>
+						<input
+							formControlName="email"
+							matInput
+							type="text"
+							placeholder="Enter your email address"
+						/>
+						<mat-error *ngIf="form.get('email').hasError('required')">
+							Email is required
+						</mat-error>
+						<mat-error *ngIf="form.get('email').hasError('minlength')">
+							Min 3 chars allowed
+						</mat-error>
+					</mat-form-field>
+				</div>
+
+				<div [ngClass]="'x-row jc-sb ' + routeAnimatedEl">
+					<mat-form-field class="x-base" color="accent" appearance="fill">
+						<mat-label>Password</mat-label>
+						<input
+							formControlName="password"
+							matInput
+							[type]="hideP ? 'password' : 'text'"
+							placeholder="Type your password"
+						/>
+
+						<mat-icon matSuffix (click)="hideP = !hideP">{{
+							hideP ? 'visibility_off' : 'visibility'
+						}}</mat-icon>
+						<mat-error *ngIf="form.get('password').hasError('required')">
+							Password is required
+						</mat-error>
+						<mat-error *ngIf="form.get('password').hasError('minlength')">
+							Minimum 8 characters
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field class="x-base" color="accent" appearance="fill">
+						<mat-label>Confirm password</mat-label>
+						<input
+							matInput
+							formControlName="confirmPassword"
+							[type]="hideP ? 'password' : 'text'"
+							placeholder="Retype your password"
+						/>
+
+						<mat-error *ngIf="form.get('confirmPassword').hasError('required')">
+							Password confirmation required
+						</mat-error>
+						<mat-error
+							*ngIf="form.get('confirmPassword').hasError('shouldMatch')"
+							>Passwords do not match!</mat-error
+						>
+						<mat-icon matSuffix (click)="hideP = !hideP">
+							{{ hideP ? 'visibility_off' : 'visibility' }}
+						</mat-icon>
+					</mat-form-field>
+				</div>
+
+				<div [ngClass]="'x-row actions jc-sb ' + routeAnimatedEl">
+					<button
+						type="submit"
+						class="x-base"
+						mat-flat-button
+						[disabled]="form.invalid || form.disabled"
+					>
+						Register
+					</button>
+
+					<a class="x-base" routerLink="/auth/login">
+						<span>Already have an account ?</span>
+					</a>
+				</div>
+			</form>
+		</div>
+		<!-- end of content -->
+	</div>
+</div>

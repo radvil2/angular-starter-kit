@@ -1,0 +1,165 @@
+/* Global styles */
+html,
+body {
+	height: 100%;
+	margin: 0;
+
+	::-webkit-scrollbar {
+		width: 0.25rem;
+	}
+	::-webkit-scrollbar-track {
+		background-color: #1e1e24;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #6649b8;
+	}
+}
+
+.header > h2 {
+	font-weight: 500;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.card {
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 5px 18px 2px rgba(0, 0, 0, 0.2);
+
+	@media (max-width: 777px) {
+		box-shadow: none;
+	}
+}
+
+.btn-submit > div > button {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 10px;
+	border-radius: 0px;
+
+	&.mat-flat-button {
+		color: white;
+		background-color: #0091e6; // do not touch !!
+
+		&:hover {
+			background-color: #283593; // based on default primary
+		}
+	}
+}
+
+.badge {
+	padding: 2px 7px;
+	border-radius: 20px;
+	width: fit-content;
+
+	&.success {
+		background-color: #00d169 !important;
+		color: white !important;
+	}
+
+	&.info {
+		background-color: #0091e6 !important;
+		color: white !important;
+	}
+
+	&.warning {
+		background-color: #a9e600 !important;
+		color: black !important;
+	}
+
+	&.error {
+		background-color: #0091e6 !important;
+		color: black !important;
+	}
+
+	&.dark {
+		background-color: #303030 !important;
+		color: white !important;
+	}
+
+	&.inline {
+		color: #959595 !important;
+		background-color: #ffffff00 !important;
+	}
+
+	&.lvl {
+		box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.24);
+	}
+
+	&.title {
+		display: flex;
+		place-items: center;
+		padding: 5px 20px;
+		margin-bottom: 20px;
+		font-size: 1.3rem;
+		font-weight: 400;
+		border-radius: 20px !important;
+		border: 1px solid #959595;
+
+		mat-icon {
+			margin-left: -10px !important;
+			margin-right: 5px !important;
+			height: 25px !important;
+			width: 25px !important;
+		}
+	}
+}
+
+.hd-mb {
+	@media (max-width: 777px) {
+		display: none;
+	}
+}
+
+/* App loading styles is underneath */
+.app-loader {
+	height: 100vh;
+	width: 100vw;
+	background-color: #333333;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+
+	.row {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1rem;
+		transform: translateY(-50%);
+	}
+
+	.dot {
+		background-color: grey;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		animation: myAni 1s ease-in-out infinite alternate forwards;
+	}
+	.red {
+		background-color: #ee382b;
+		animation-delay: 0.2s;
+	}
+
+	.yellow {
+		background-color: #fab800;
+		animation-delay: 0.4s;
+	}
+
+	.green {
+		background-color: #2fa550;
+		animation-delay: 0.6s;
+	}
+
+	.blue {
+		background-color: #397ef5;
+		animation-delay: 0.8s;
+	}
+
+	@keyframes myAni {
+		to {
+			transform: translateY(1rem);
+		}
+	}
+}

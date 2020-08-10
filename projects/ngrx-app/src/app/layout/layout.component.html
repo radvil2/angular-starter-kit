@@ -1,0 +1,33 @@
+<div [class]="'theme-wrapper ' + (theme$ | async)">
+	<mat-progress-bar
+		*ngIf="isLoading$ | async"
+		mode="indeterminate"
+		color="primary"
+		[style]="progressBarStyle"
+	></mat-progress-bar>
+
+	<mat-sidenav-container>
+		<mat-sidenav #sidebar mode="over">
+			<rad-sidebar (onSidebarToggled)="sidebar.toggle()"></rad-sidebar>
+		</mat-sidenav>
+
+		<div class="wrapper">
+			<rad-topbar (onIconClicked)="sidebar.toggle()"></rad-topbar>
+			<!-- router content -->
+			<main
+				class="page-container"
+				[style.marginTop]="(isStickyHeader$ | async) && '55px'"
+				[@routeAnimations]="
+					o.isActivated &&
+					o.activatedRoute.routeConfig.data &&
+					o.activatedRoute.routeConfig.data.title
+				"
+			>
+				<router-outlet #o="outlet"></router-outlet>
+			</main>
+
+			<!-- footer -->
+			<rad-footer></rad-footer>
+		</div>
+	</mat-sidenav-container>
+</div>

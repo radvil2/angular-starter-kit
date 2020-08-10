@@ -50,7 +50,7 @@
               "projects/ngrx-app/src/assets"
             ],
             "styles": [
-              "projects/ngrx-app/src/styles/styles.scss"
+              "projects/ngrx-app/src/styles/_root.scss"
             ],
             "scripts": []
           },
@@ -114,7 +114,7 @@
               "projects/ngrx-app/src/assets"
             ],
             "styles": [
-              "projects/ngrx-app/src/styles/styles.scss"
+              "projects/ngrx-app/src/styles/_root.scss"
             ],
             "scripts": []
           }

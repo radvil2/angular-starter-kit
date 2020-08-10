@@ -1,0 +1,38 @@
+@import '../../../styles/variables';
+
+.btn__menu {
+	@media (min-width: 777px) {
+		display: none;
+	}
+}
+
+.toolbar {
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+
+	// topbar spacer;
+	.spacer {
+		flex: 1 0 auto;
+	}
+
+	.menu_top {
+		height: 100%;
+	}
+
+	.mat-button {
+		margin-right: 5px;
+		border: none;
+		border-radius: 0px;
+	}
+
+	.mat-icon-button {
+		justify-content: center;
+	}
+
+	@media (max-width: map-get($grid-breakpoints, md)) {
+		.menu_top {
+			display: none;
+		}
+	}
+}

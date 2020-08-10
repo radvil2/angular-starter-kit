@@ -1,0 +1,47 @@
+<!-- sidenav toolbar -->
+<mat-toolbar color="primary">
+	<button mat-icon-button (click)="closeSidebar()">
+		<mat-icon>close</mat-icon>
+	</button>
+
+	<div class="branding">
+		<img src="assets/icons/logo.png" alt="branding" />
+		<span>Injoker</span>
+	</div>
+</mat-toolbar>
+
+<!-- sidenav item list -->
+<div class="side-menu-group">
+	<!-- menu group one -->
+	<mat-nav-list>
+		<ng-container *ngFor="let menu of menu.items">
+			<a
+				mat-list-item
+				(click)="closeSidebar()"
+				*ngIf="!menu.isPrivate || (isAuthenticated$ | async)"
+				[routerLink]="menu.link"
+				routerLinkActive="active"
+			>
+				<mat-icon>{{ menu.icon }}</mat-icon>
+				<span class="spacer"></span>
+				<span>{{ menu.label }}</span>
+				<mat-divider></mat-divider>
+			</a>
+		</ng-container>
+	</mat-nav-list>
+
+	<mat-divider></mat-divider>
+
+	<!-- menu group two -->
+	<mat-nav-list>
+		<a
+			mat-list-item
+			(click)="closeSidebar()"
+			*ngFor="let menu of menu.itemsTwo"
+			[routerLink]="menu.link"
+			routerLinkActive="active"
+		>
+			<span>{{ menu.label }}</span>
+		</a>
+	</mat-nav-list>
+</div>

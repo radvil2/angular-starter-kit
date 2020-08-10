@@ -1,4 +1,4 @@
-import { I_RowData } from '../components/row_detail/row_detail';
+import { I_RowData } from '../_components/row_detail/row_detail';
 
 export class RowDataSource {
 
