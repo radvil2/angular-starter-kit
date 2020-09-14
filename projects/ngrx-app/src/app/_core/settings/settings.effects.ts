@@ -5,8 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { combineLatest, merge, of } from 'rxjs';
 import { tap, withLatestFrom } from 'rxjs/operators';
 
-import { selectSettingsState } from '../core.state';
-import { LocalStorageService, AnimationsService } from '../utils';
+import { LocalStorageService, AnimationsService } from '../../_shared';
 
 import * as fromActions from './settings.actions';
 import * as fromSelectors from './settings.selectors';
@@ -51,7 +50,9 @@ export class SettingsEffects {
 					fromActions.changePageAnimationsDisabled,
 					fromActions.changeElementsAnimations
 				),
-				withLatestFrom(this.store.pipe(select(selectSettingsState))),
+				withLatestFrom(
+					this.store.pipe(select(fromSelectors.selectSettingsState))
+				),
 				tap(([action, settings]) =>
 					this.localStorageSrv.setItem(SETTINGS_KEY, settings)
 				)

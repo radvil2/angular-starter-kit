@@ -1,0 +1,17 @@
+.account_detail {
+    font-size: 1rem;
+}
+
+// Desktop || Tablet Screen
+@media (min-width: 777px) {
+    section {
+        margin-bottom: 20px;
+    }
+    .user_detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 18px;
+        font-weight: 400;
+    } 
+}

@@ -2,10 +2,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../_core/utils/animations';
 import * as fromActions from '../../../_core/settings/settings.actions';
 import { ISettingsState, IState } from '../../../_core/settings/settings.model';
 import { selectSettings } from '../../../_core/settings/settings.selectors';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../_shared';
 
 @Component({
 	selector: 'rad-settings',

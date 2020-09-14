@@ -1,35 +1,113 @@
-import { IAuthState } from './auth.model';
+import { IAuthState, initialAuthState } from './auth.state';
 import { createReducer, on, Action } from '@ngrx/store';
-import { authLogin, authLogout, authRegister } from './auth.actions';
+import {
+	loginA,
+	loginAS,
+	loginAF,
+	logoutA,
+	getCurrentUserA,
+	getCurrentUserAS,
+	getCurrentUserAF,
+	logoutAS,
+	logoutAF,
+} from './auth.actions';
 
-export const initialAuthState: IAuthState = {
-	account: undefined,
-	token: null,
-	isAuthenticated: false
-};
-
-const reducer = createReducer(
+const reducerX = createReducer(
 	initialAuthState,
-	on(authLogin, (state: IAuthState, { payload }) => ({
-		...state,
-		payload,
-		isAuthenticated: true
-	})),
-	on(authRegister, (state: IAuthState, { payload }) => ({
-		...state,
-		payload,
-		isAuthenticated: false
-	})),
-	on(authLogout, (state: IAuthState) => ({
-		...state,
-		token: null,
-		isAuthenticated: false
-	}))
+
+	// #region !! AuthLoginReducer
+	on(
+		loginA,
+		(state): IAuthState => ({
+			...state,
+			isSubmitting: true,
+			errors: null
+		})
+	),
+
+	on(
+		loginAS,
+		(state, action): IAuthState => ({
+			...state,
+			isSubmitting: false,
+			isLoggedIn: true,
+			currentUser: action.currentUser
+		})
+	),
+
+	on(
+		loginAF,
+		(state, action): IAuthState => ({
+			...state,
+			isSubmitting: false,
+			errors: action.errors
+		})
+	),
+	// #endregion
+
+	// #region getCurrentUser
+	on(
+		getCurrentUserA,
+		(state): IAuthState => ({
+			...state,
+			isLoading: true
+		})
+	),
+
+	on(
+		getCurrentUserAS,
+		(state, action): IAuthState => ({
+			...state,
+			isSubmitting: false,
+			isLoading: false,
+			isLoggedIn: true,
+			currentUser: action.currentUser
+		})
+	),
+
+	on(
+		getCurrentUserAF,
+		(state, action): IAuthState => ({
+			...state,
+			isLoading: false,
+			isLoggedIn: false,
+			currentUser: null,
+			errors: action.errors
+		})
+	),
+	// #endregion
+
+	on(
+		logoutA,
+		(state): IAuthState => ({
+			...state,
+			isLoading: true,
+			// isLoggedIn: false
+		})
+	),
+
+	on(
+		logoutAS,
+		(state): IAuthState => ({
+			...state,
+			isLoading: false,
+			currentUser: null,
+			isLoggedIn: false
+		})
+	),
+
+	on(
+		logoutAF,
+		(state, action): IAuthState => ({
+			...state,
+			isLoading: false,
+			errors: action.errors
+			// isLoggedIn: false
+		})
+	),
 );
 
-export function authReducer(
-	state: IAuthState | undefined,
-	action: Action
-): IAuthState {
-	return reducer(state, action);
+export function authReducer(state: IAuthState, action: Action) {
+	// state is the state of reducer and action is what we change in our state
+	return reducerX(state, action);
 }

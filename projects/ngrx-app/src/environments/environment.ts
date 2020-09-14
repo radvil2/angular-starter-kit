@@ -8,7 +8,8 @@ export const environment = {
 	production: false,
 	version: '1.8.2',
 
-	apiUrl: 'http://localhost:3000/api/v1'
+	apiUrl: 'http://localhost:3000/api/v0',
+	tokenKey: 'TOKEN'
 };
 
 /*

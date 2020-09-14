@@ -1,14 +1,19 @@
-import { IUser } from '../user/user.interface';
+import { TBase } from '../_types';
 
-export interface IBlog {
+export interface IBlog extends TBase {
 	title: string;
-	intro?: string;
-	content?: string;
-	image: string;
-	date: string;
-	author: IUser;
+	content: string;
+	author: Author;
 
-	likes?: String;
-	comments?: String;
-	shares?: String;
+	intro?: string;
+	image?: string;
+	likes?: string;
+	comments?: string;
+	shares?: string;
+}
+
+export interface Author extends TBase {
+	name: string,
+	username: string,
+	picture: string,
 }

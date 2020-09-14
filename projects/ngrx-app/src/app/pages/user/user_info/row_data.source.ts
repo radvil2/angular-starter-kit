@@ -1,10 +1,11 @@
-import { I_RowData } from '../_components/row_detail/row_detail';
+import { IRowData } from './row_detail/row_detail';
+import { IUser } from '../../../_core/_types';
 
 export class RowDataSource {
 
-	constructor() {}
+	constructor() { }
 
-	setRowData(data: any): I_RowData[] {
+	setRowData(data: IUser): IRowData[] {
 		return [
 			{
 				icon: 'account_circle',
@@ -20,12 +21,32 @@ export class RowDataSource {
 			{
 				icon: 'verified_user',
 				label: 'Followers',
-				value: `${data.followers} People`
+				value: ``
 			},
 			{
 				icon: 'event_available',
 				label: 'Date Join',
 				value: `Since ${data.createdAt}`
+			},
+			{
+				icon: 'cake',
+				label: 'Birthday',
+				value: data.birthday
+			},
+			{
+				icon: 'work',
+				label: 'Job',
+				value: data.job
+			},
+			{
+				icon: 'code',
+				label: 'Company',
+				value: data.company
+			},
+			{
+				icon: 'fingerprint',
+				label: 'Gender',
+				value: data.gender
 			},
 			{
 				icon: 'cake',

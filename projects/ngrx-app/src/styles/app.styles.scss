@@ -11,7 +11,7 @@ body {
 		background-color: #1e1e24;
 	}
 	::-webkit-scrollbar-thumb {
-		background-color: #6649b8;
+		background-color: #0d6771;
 	}
 }
 
@@ -160,6 +160,64 @@ body {
 	@keyframes myAni {
 		to {
 			transform: translateY(1rem);
+		}
+	}
+}
+
+// Custom dynamic theme
+.black-theme {
+	.mat-drawer-container,
+	.mat-menu-panel,
+	.mat-select-panel,
+	.footer {
+		background-color: #222 !important;
+	}
+	.mat-toolbar.mat-primary,
+	.mat-drawer,
+	#auth-login,
+	.footer {
+		background-color: #181818 !important;
+	}
+	.mat-flat-button.mat-primary,
+	.mat-raised-button.mat-primary,
+	.mat-fab.mat-primary,
+	.mat-mini-fab.mat-primary {
+		background-color: #181818 !important;
+	}
+	.tile_actions {
+		ul {
+			background-color: #181818 !important;
+			color: #dadada;
+			li:hover {
+				background-color: #1118 !important;
+				border-radius: 30px;
+			}
+		}
+	}
+}
+
+.default-theme {
+	.tile_actions {
+		ul {
+			background-color: #f0f0f0 !important;
+			color: #181818;
+			li:hover {
+				background-color: #e6e6e6 !important;
+				border-radius: 30px;
+			}
+		}
+	}
+}
+
+.white-theme {
+	.tile_actions {
+		ul {
+			background-color: #f0f0f0 !important;
+			color: #181818;
+			li:hover {
+				background-color: #e6e6e6 !important;
+				border-radius: 30px;
+			}
 		}
 	}
 }

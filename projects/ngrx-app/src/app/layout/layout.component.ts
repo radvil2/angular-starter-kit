@@ -10,11 +10,8 @@ import {
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
-import {
-	selectEffectiveTheme,
-	selectIsStickyHeader,
-	routeAnimations,
-} from '../_core';
+import { selectEffectiveTheme, selectIsStickyHeader } from '../_core/settings';
+import { routeAnimations } from '../_shared';
 
 import { IsLoadingService } from '@service-work/is-loading';
 
@@ -41,7 +38,7 @@ export class LayoutComponent implements OnInit {
 		private router: Router,
 		private loadingSrv: IsLoadingService,
 		private store: Store
-	) {}
+	) { }
 
 	ngOnInit(): void {
 		this.setAppProgressBar();

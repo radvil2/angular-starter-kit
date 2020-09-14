@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IBlog, BlogService, IUser, UserService } from '../../../_core';
+
+import { BlogService } from '../../../_core/blog/blog.service';
+import { UserService } from '../../../_core/user/user.service';
+import { IBlog, IUser } from '../../../_core/_types';
+
+import { RowDataSource } from '../user_info/row_data.source';
 
 @Component({
 	selector: 'rad-user_timeline',
@@ -9,17 +14,19 @@ import { IBlog, BlogService, IUser, UserService } from '../../../_core';
 export class UserTimelineComponent implements OnInit {
 	blogs: IBlog[] = [];
 	user: IUser;
-	featureImages: Array<any> = [];
+	featureImages: Array<string> = [];
+
+	dataSource: RowDataSource = new RowDataSource();
 
 	constructor(private blogSrv: BlogService, private userSrv: UserService) {}
 
 	ngOnInit() {
 		this.setBlogs();
-		this.setUser();
+		this.getUserDetail();
 		this.setFeatureImages();
 	}
 
-	setUser(): void {
+	getUserDetail() {
 		this.user = this.userSrv.getUser();
 	}
 

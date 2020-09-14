@@ -1,0 +1,21 @@
+#redirect-page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 50vh;
+    }
+
+    button {
+        cursor: pointer;
+    }
+}

@@ -7,9 +7,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
 
-import { SidedContainerModule } from '../../_shared';
-import { UserFigure } from './_components/user_figure/user_figure';
-import { UserComponent } from './_container/user.component';
+import { SidedContainerModule } from '../../_shared/components';
+
+import { UserFigure } from './component/user_figure/user_figure';
+import { UserComponent } from './component/user.component';
 import { UserRouting } from './user.routing';
 
 @NgModule({

@@ -13,9 +13,9 @@
 	// margin-top: 64px;
 	overflow: hidden;
 
-	@media (max-width: 777px) {
-		padding: 20px 0;
-	}
+	// @media (max-width: 777px) {
+	// 	padding: 20px 0;
+	// }
 }
 
 .branding {
@@ -63,9 +63,9 @@ mat-sidenav-container {
 		flex-direction: column;
 	}
 
-	@media (max-width: 777px) {
-		.page-container {
-			margin-top: 35px !important;
-		}
-	}
+	// @media (max-width: 777px) {
+	// 	.page-container {
+	// 		margin-top: 35px !important;
+	// 	}
+	// }
 }

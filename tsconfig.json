@@ -13,5 +13,6 @@
     {
       "path": "./projects/ngrx-app/tsconfig.spec.json"
     }
-  ]
+  ],
+  "experimentalDecorators": true
 }

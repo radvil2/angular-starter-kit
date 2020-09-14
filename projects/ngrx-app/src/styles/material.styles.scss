@@ -11,14 +11,15 @@
 @import '../app/layout/layout.theme';
 @import '../app/layout/footer/footer.theme';
 
-@import '../app/pages/user/_container/user.theme';
-@import '../app/pages/user/_components/user_figure/user_figure.theme';
+@import '../app/pages/user/component/user.theme';
+@import '../app/pages/user/component/user_figure/user_figure.theme';
 @import '../app/pages/user/user_timeline/user_timeline.theme';
 @import '../app/pages/user/user_info/user_info.theme';
 @import '../app/pages/user/user_edit/user_edit.theme';
 
 @import '../app/_shared/components/blog_tile/blog_tile.theme';
 @import '../app/_shared/components/write_post/write_post.theme';
+@import '../app/_shared/components/tile_actions/tile_actions';
 
 @mixin custom-components-theme($theme) {
 	@include rad-reset-theme($theme);
@@ -33,6 +34,7 @@
 
 	@include rad-blog_tile-theme($theme);
 	@include rad-write_post-theme($theme);
+	@include rad-tile_actions-theme($theme)
 }
 
 .default-theme {

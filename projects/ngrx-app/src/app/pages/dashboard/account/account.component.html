@@ -1,0 +1,8 @@
+<section>
+	<div [ngClass]="'account_detail ' + animate">
+		<ng-container *ngFor="let row of rowData">
+			<rad-row_detail (click)="clickRow(row)" [data]="row"></rad-row_detail>
+		</ng-container>
+	</div>
+</section>
+ 

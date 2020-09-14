@@ -1,3 +1,6 @@
 export * from './helpers';
-export * from './components';
-export * from './directives';
+
+export * from './animations';
+export * from './local-storage/local-storage.service';
+export * from './notification/notification.service';
+export * from './title/title.service';

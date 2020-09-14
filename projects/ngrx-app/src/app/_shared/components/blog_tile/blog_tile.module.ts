@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { TileActionsModule } from '../tile_actions/tile_actions.module';
 
-import { IBlog } from '../../../_core/blog';
+import { IBlog } from '../../../_core/_types';
 import { TruncatePipe } from '../../helpers';
 
 //#region !! component

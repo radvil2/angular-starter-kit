@@ -1,0 +1,23 @@
+<div class="page-title">
+	<h2>{{ pageTitle }}</h2>
+</div>
+
+<rad-sided_container>
+	<nav mat-tab-nav-bar mat-align-tabs="start">
+		<a
+			mat-tab-link
+			color="accent"
+			*ngFor="let link of navLinks"
+			[routerLink]="link.path"
+			routerLinkActive="active"
+			#rla="routerLinkActive"
+			[active]="rla.isActive"
+		>
+			{{ link.label }}
+		</a>
+	</nav>
+
+	<div class="outlet">
+		<router-outlet></router-outlet>
+	</div>
+</rad-sided_container>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RedirectComponent } from './redirect/redirect.component';
 
 const routes: Routes = [
 	{
@@ -18,6 +19,11 @@ const routes: Routes = [
 		path: 'register',
 		component: RegisterComponent,
 		data: { title: 'User Registration' }
+	},
+	{
+		path: 'redirecting',
+		component: RedirectComponent,
+		data: { title: 'Redirect user' }
 	}
 ];
 
@@ -27,4 +33,4 @@ const routes: Routes = [
 })
 export class AuthRouting {}
 
-export const routedComponents = [LoginComponent, RegisterComponent];
+export const ROUTED_COMPONENTS = [LoginComponent, RegisterComponent, RedirectComponent];

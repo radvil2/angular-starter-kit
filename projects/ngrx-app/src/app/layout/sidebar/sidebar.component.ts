@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
-import { selectIsAuthenticated } from '../../_core';
+
+import { Store } from '@ngrx/store';
+import { isLoggedIn } from '../../_core/auth';
 
 import * as MenuItems from '../menu-items';
 
@@ -13,13 +14,15 @@ import * as MenuItems from '../menu-items';
 })
 export class SidebarComponent implements OnInit {
 	public menu = MenuItems;
+
 	isAuthenticated$: Observable<boolean>;
+
 	@Output() onSidebarToggled = new EventEmitter<any>();
 
 	constructor(private store: Store) {}
 
 	ngOnInit(): void {
-		this.isAuthenticated$ = this.store.select(selectIsAuthenticated);
+		this.isAuthenticated$ = this.store.select(isLoggedIn);
 	}
 
 	closeSidebar() {

@@ -16,7 +16,7 @@
 			<!-- router content -->
 			<main
 				class="page-container"
-				[style.marginTop]="(isStickyHeader$ | async) && '55px'"
+				[style.marginTop]="(isStickyHeader$ | async) ? '55px' : 'unset'"
 				[@routeAnimations]="
 					o.isActivated &&
 					o.activatedRoute.routeConfig.data &&

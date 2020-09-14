@@ -5,14 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
-import {
-	TileActionsModule,
-	WritePostModule,
-	TruncatePipe,
-	BlogTileModule
-} from '../../../_shared';
-import { UserDetail, FeatureImages } from '../_components';
+import { TileActionsModule, WritePostModule, BlogTileModule } from '../../../_shared/components';
+import { TruncatePipe } from '../../../_shared/helpers';
+
 import { UserTimelineComponent } from './user_timeline.component';
+import { FeatureImages } from './feature_images/feature_images';
+import { UserDetail } from './user_detail/user_detail';
 
 const routes: Routes = [
 	{
@@ -25,8 +23,8 @@ const routes: Routes = [
 @NgModule({
 	declarations: [
 		UserTimelineComponent,
-		UserDetail,
 		FeatureImages,
+		UserDetail,
 		TruncatePipe
 	],
 	imports: [
@@ -40,4 +38,4 @@ const routes: Routes = [
 		WritePostModule,
 	]
 })
-export class UserTimelineModule {}
+export class UserTimelineModule { }

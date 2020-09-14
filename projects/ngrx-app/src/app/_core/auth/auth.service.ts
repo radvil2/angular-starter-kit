@@ -1,24 +1,42 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
-import { IAccount } from '../user/user.interface';
 import { environment as env } from '../../../environments/environment';
+import { IUser, ILoginRequest, IRevokeTokenRequest } from '../_types';
+import { LocalStorageService } from '../../_shared';
 
-@Injectable({ providedIn: 'root' })
-export class AuthService {
-	constructor(private http: HttpClient) {}
+@Injectable({ providedIn: 'root' }) export class AuthService {
+	constructor(
+		private http: HttpClient,
+		private localStorageSrv: LocalStorageService
+	) { }
 
-	loginUser(username: string, password: string): Observable<string> {
+	loginUser(formData: ILoginRequest): Observable<IUser> {
 		return this.http
-			.post<IAccount>(env.apiUrl + '/users/login', { username, password })
-			.pipe(map((res) => res['token']));
+			.post<ILoginRequest>(env.apiUrl + '/users/login', formData, { withCredentials: true })
+			.pipe(map((res) => res['doc']));
 	}
 
-	registerUser(data: IAccount): Observable<IAccount> {
+	getCurrentUser(): Observable<IUser> {
 		return this.http
-			.post<IAccount>(env.apiUrl + '/users/register', data)
+			.get<IUser>(env.apiUrl + '/users/private-profile')
 			.pipe(map((res) => res['doc']));
+	}
+
+	refreshToken(): Observable<IUser> {
+		return this.http
+			.get(env.apiUrl + '/users/refresh-token', { withCredentials: true })
+			.pipe(
+				map((res) => res['doc']),
+				tap((doc) => this.localStorageSrv.setItem(env.tokenKey, doc['token']))
+			);
+	}
+
+	revokeToken(): Observable<any> {
+		return this.http
+			.post<IRevokeTokenRequest>(env.apiUrl + '/users/revoke-token', {},
+				{ withCredentials: true })
 	}
 }

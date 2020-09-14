@@ -1,14 +1,14 @@
-<div class="blog_tile">
+<div *ngIf="blog" class="blog_tile">
 	<div class="tile_header">
 		<div (click)="authorName.click()" class="user_photo">
-			<img [src]="blog?.author?.photo" alt="photo" />
+			<img [src]="blog?.author?.picture" alt="photo" />
 		</div>
 		<div class="blog_meta">
 			<div (click)="navigateToAuthorProfile()" #authorName class="name">
-				{{ blog?.author.name }}
+				{{ blog?.author?.name }}
 			</div>
 			<div class="date">
-				{{ blog?.date }}
+				{{ blog?.createdAt }}
 			</div>
 		</div>
 		<div (click)="showTileMenu()" class="action">

@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { IUser, UserService, ROUTE_ANIMATIONS_ELEMENTS } from '../../../_core';
-import { I_RowData } from '../_components';
+import { UserService } from '../../../_core/user/user.service';
+import { IUser } from '../../../_core/user/user.interface';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../_shared';
+
+import { IRowData } from './row_detail/row_detail';
 import { RowDataSource } from './row_data.source';
 
 @Component({
@@ -10,7 +13,7 @@ import { RowDataSource } from './row_data.source';
 	styleUrls: ['./user_info.component.scss']
 })
 export class UserInfoComponent implements OnInit, OnDestroy {
-	rowData: I_RowData[] = [];
+	rowData: IRowData[] = [];
 	dataSource: RowDataSource = new RowDataSource();
 	animate = ROUTE_ANIMATIONS_ELEMENTS;
 	userId: string;
@@ -23,7 +26,7 @@ export class UserInfoComponent implements OnInit, OnDestroy {
 
 	getUserDetail() {
 		let user: IUser = this.userSrv.getUser();
-		this.userId = user._id;
+		this.userId = user.id;
 		this.rowData = this.dataSource.setRowData(user);
 	}
 

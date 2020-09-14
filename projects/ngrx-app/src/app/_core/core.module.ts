@@ -9,15 +9,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // app states
 import { reducers, metaReducers } from './core.state';
+import { AuthEffects } from './auth';
 import { SettingsEffects } from './settings';
-import { AuthEffects } from './auth/auth.effects';
 
 // app utils
-import { HttpErrorInterceptor, AppErrorHandler } from './utils';
+import { HttpErrorInterceptor, TokenInterceptor, AppErrorHandler } from './handlers';
 
 // app providers
 const PROVIDERS = [
 	{ provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+	{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
 	{ provide: ErrorHandler, useClass: AppErrorHandler }
 ];
 

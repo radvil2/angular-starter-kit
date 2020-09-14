@@ -1,7 +1,7 @@
 <section>
 	<div [ngClass]="'user_detail ' + animate">
 		<ng-container *ngFor="let row of rowData">
-			<rad-row_detail [data]="row"></rad-row_detail>
+			<rad-row_detail *ngIf="!!row.value" [data]="row"></rad-row_detail>
 		</ng-container>
 
 		<div class="edit_profile">

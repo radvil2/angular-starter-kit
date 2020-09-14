@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class UserEditComponent implements OnInit, OnDestroy {
 	idParam: string;
+
 	private subs: Subscription = new Subscription();
 
 	constructor(private route: ActivatedRoute) {
@@ -23,5 +24,5 @@ export class UserEditComponent implements OnInit, OnDestroy {
 		console.log('[EDIT-PROFILE] [OnDestroy] UnSubsribe user___');
 	}
 
-	loadUser() {}
+	loadUser() { }
 }

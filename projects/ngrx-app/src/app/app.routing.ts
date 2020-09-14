@@ -4,9 +4,9 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'auth',
+		redirectTo: 'user',
 		pathMatch: 'full'
-	},
+	}, 
 	{
 		path: 'auth',
 		loadChildren: () =>
@@ -17,6 +17,13 @@ const routes: Routes = [
 		loadChildren: () =>
 			import('./pages/settings/settings.module').then(
 				(m) => m.SettingsModule
+			)
+	},
+	{
+		path: 'dashboard',
+		loadChildren: () =>
+			import('./pages/dashboard/dashboard.module').then(
+				(m) => m.DashboardModule
 			)
 	},
 	{

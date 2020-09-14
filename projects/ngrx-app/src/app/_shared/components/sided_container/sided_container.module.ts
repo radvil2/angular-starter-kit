@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../_core/utils/animations';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../_shared';
 import { AdsTileModule } from '../ads_tile/ads_tile.module';
 
 //#region !! component

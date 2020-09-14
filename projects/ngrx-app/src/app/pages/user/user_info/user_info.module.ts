@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 import { UserInfoComponent } from './user_info.component';
-import { RowDetail } from '../_components';
+import { RowDetail } from './row_detail/row_detail';
 
 const routes: Routes = [
 	{
